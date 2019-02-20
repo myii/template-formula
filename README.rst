@@ -2,8 +2,15 @@
 template-formula
 ================
 
-.. image:: https://travis-ci.com/saltstack-formulas/template-formula.svg?branch=master
+|img_travis| |img_sr|
+
+.. |img_travis| image:: https://travis-ci.com/saltstack-formulas/template-formula.svg?branch=master
     :target: https://travis-ci.com/saltstack-formulas/template-formula
+.. |img_sr| image:: https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg
+    :target: https://github.com/semantic-release/semantic-release
+
+[![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
+ 
 
 A SaltStack formula that is empty. It has dummy content to help with a quick
 start on a new formula and it serves as a style guide.

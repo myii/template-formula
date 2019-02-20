@@ -17,3 +17,21 @@ env:
 script:
   - bundle exec kitchen verify ${INSTANCE}
 
+jobs:
+  include:
+    # Define the release stage that runs semantic-release
+    - stage: release
+      # Only run if the build passed successfully and is the `master` branch
+      if: |
+        test $TRAVIS_TEST_RESULT = 0 AND \
+        branch = master
+      script:
+        - npm install @semantic-release/changelog@3 -D
+        - npm install @semantic-release/exec@3 -D
+        - npm install @semantic-release/git@7 -D
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release@15
+
