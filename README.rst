@@ -2,6 +2,9 @@
 template-formula
 ================
 
+.. image:: https://travis-ci.com/saltstack-formulas/template-formula.svg?branch=master
+    :target: https://travis-ci.com/saltstack-formulas/template-formula
+
 A SaltStack formula that is empty. It has dummy content to help with a quick
 start on a new formula and it serves as a style guide.
 
