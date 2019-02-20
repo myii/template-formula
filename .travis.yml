@@ -28,6 +28,7 @@ jobs:
       # Only run if this is the `master` branch
       if: branch = master
       language: generic
+      before_install: skip
       script:
         - npm install @semantic-release/changelog@3 -D
         - npm install @semantic-release/exec@3 -D
