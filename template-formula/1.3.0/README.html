@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>template-formula :: SaltStack Formulas</title>
+    <link rel="canonical" href="https://myii.github.io/template-formula/template-formula/1.3.0/README.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://myii.github.io/template-formula">SaltStack Formulas</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="main-wrapper">
+<div class="navigation-container" data-component="template-formula" data-version="1.3.0">
+  <aside class="navigation">
+    <div class="panels">
+<div class="navigation-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="README.html">template-formula</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-toggle"></button>
+    <span class="nav-text">Formula</span>
+<ul class="nav-list">
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="README.html">README</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="CONTRIBUTING.html">How to contribute</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="navigation-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">template-formula</span>
+    <span class="version">1.3.0</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">template-formula</span>
+      <ul class="versions">
+        <li class="version is-current is-latest">
+          <a href="README.html">1.3.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+  <main class="main">
+<div class="toolbar" role="navigation">
+  <button class="navigation-toggle"></button>
+  <a href="README.html" class="home-link is-current"></a>
+<nav class="crumbs" aria-label="breadcrumbs">
+  <ul>
+    <li class="crumb"><a href="README.html">template-formula</a></li>
+    <li class="crumb">Formula</li>
+    <li class="crumb"><a href="README.html">README</a></li>
+  </ul>
+</nav>
+  <div class="edit-this-page"><a href="https://github.com/myii/template-formula/blob/v1.3.0/adoc/modules/ROOT/pages/README.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1>template-formula</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p><a href="https://travis-ci.com/saltstack-formulas/template-formula"><span class="image"><img src="https://travis-ci.com/saltstack-formulas/template-formula.svg?branch=master" alt="Travis CI Build Status"></span></a>
+<a href="https://template-formula.readthedocs.io/en/latest/?badge=latest"><span class="image"><img src="https://readthedocs.org/projects/docs/badge/?version=latest" alt="Documentation Status"></span></a>
+<a href="https://github.com/semantic-release/semantic-release"><span class="image"><img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic&#8212;&#8203;release-e10079.svg" alt="Semantic Release"></span></a></p>
+</div>
+<div class="paragraph">
+<p>A SaltStack formula that is empty.
+It has dummy content to help with a quick start on a new formula and it serves
+as a style guide.</p>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle" class="title">TABLE OF CONTENTS</div>
+<ul class="sectlevel1">
+<li><a href="#_general_notes">1. General notes</a></li>
+<li><a href="#_contributing_to_this_repo">2. Contributing to this repo</a></li>
+<li><a href="#_available_states">3. Available states</a>
+<ul class="sectlevel2">
+<li><a href="#_template">3.1. <code>template</code></a></li>
+<li><a href="#_template_package">3.2. <code>template.package</code></a></li>
+<li><a href="#_template_config">3.3. <code>template.config</code></a></li>
+<li><a href="#_template_service">3.4. <code>template.service</code></a></li>
+<li><a href="#_template_clean">3.5. <code>template.clean</code></a></li>
+<li><a href="#_template_service_clean">3.6. <code>template.service.clean</code></a></li>
+<li><a href="#_template_config_clean">3.7. <code>template.config.clean</code></a></li>
+<li><a href="#_template_package_clean">3.8. <code>template.package.clean</code></a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_general_notes"><a class="anchor" href="#_general_notes"></a>1. General notes</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>See the full
+<a href="https://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html">SaltStack
+Formulas installation and usage instructions</a>.</p>
+</div>
+<div class="paragraph">
+<p>If you are interested in writing or contributing to formulas,
+please pay attention to the
+<a href="https://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html#writing-formulas">Writing
+Formula Section</a>.</p>
+</div>
+<div class="paragraph">
+<p>If you want to use this formula, please pay attention to the <code>FORMULA</code>
+file and/or <code>git tag</code>, which contains the currently released version.
+This formula is versioned according to <a href="http://semver.org/">Semantic
+Versioning</a>.</p>
+</div>
+<div class="paragraph">
+<p>See
+<a href="https://docs.saltstack.com/en/latest/topics/development/conventions/formulas.html#versioning">Formula
+Versioning Section</a>
+for more details.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_contributing_to_this_repo"><a class="anchor" href="#_contributing_to_this_repo"></a>2. Contributing to this repo</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>Commit message formatting is significant!!</strong></p>
+</div>
+<div class="paragraph">
+<p>Please see
+<a href="CONTRIBUTING.html" class="page">How to contribute</a>
+for more details.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_available_states"><a class="anchor" href="#_available_states"></a>3. Available states</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_template"><a class="anchor" href="#_template"></a>3.1. <code>template</code></h3>
+<div class="paragraph">
+<p><em>Meta-state (this is a state that includes other states)</em>.</p>
+</div>
+<div class="paragraph">
+<p>This installs the template package,
+manages the template configuration file
+and then starts the associated template service.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_template_package"><a class="anchor" href="#_template_package"></a>3.2. <code>template.package</code></h3>
+<div class="paragraph">
+<p>This state will install the template package only.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_template_config"><a class="anchor" href="#_template_config"></a>3.3. <code>template.config</code></h3>
+<div class="paragraph">
+<p>This state will configure the template service
+and has a dependency on <code>template.install</code> via. the <code>include</code> list.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_template_service"><a class="anchor" href="#_template_service"></a>3.4. <code>template.service</code></h3>
+<div class="paragraph">
+<p>This state will start the template service
+and has a dependency on <code>template.config</code> via. the <code>include</code> list.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_template_clean"><a class="anchor" href="#_template_clean"></a>3.5. <code>template.clean</code></h3>
+<div class="paragraph">
+<p><em>Meta-state (this is a state that includes other states)</em>.</p>
+</div>
+<div class="paragraph">
+<p>This state will undo everything performed in the <code>template</code> meta-state
+in reverse order,
+i.e. stops the service,
+removes the configuration file
+and then uninstalls the package.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_template_service_clean"><a class="anchor" href="#_template_service_clean"></a>3.6. <code>template.service.clean</code></h3>
+<div class="paragraph">
+<p>This state will stop the template service and disable it at boot time.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_template_config_clean"><a class="anchor" href="#_template_config_clean"></a>3.7. <code>template.config.clean</code></h3>
+<div class="paragraph">
+<p>This state will remove the configuration of the template service
+and has a dependency on <code>template.service.clean</code> via. the <code>include</code> list.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_template_package_clean"><a class="anchor" href="#_template_package_clean"></a>3.8. <code>template.package.clean</code></h3>
+<div class="paragraph">
+<p>This state will remove the template package
+and has a depency on <code>template.config.clean</code> via. the <code>include</code> list.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+  </body>
+</html>
