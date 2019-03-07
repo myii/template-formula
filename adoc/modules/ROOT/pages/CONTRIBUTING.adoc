@@ -87,14 +87,12 @@ as outlined in the table below, based upon the
 https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type[type]
 of the commit:
 
-[cols=",,,^,^",options="header",]
-
 .Commit type vs. version bump
 [format="psv", separator="|", frame="all", grid="all", float="left", options="header", cols="<.<14m,<.<25d,<.<37d,^.<12m,^.<12m", width="100"]
 |===
-^.^|Type
-^.^|Heading
-^.^|Description
+<.^|Type
+<.^|Heading
+<.^|Description
 ^.^|Bump (default)
 ^.^|Bump (custom)
 

@@ -6,6 +6,8 @@
 ** xref:ROOT:CONTRIBUTING.adoc#documentation[Documentation]
 *** xref:ROOT:CONTRIBUTING.adoc#saltstack_formulas_rst_page_template[RST page template]
 
+* xref:ROOT:TOFS_pattern.adoc[TOFS: A pattern for using SaltStack]
+
 .Formula
 * xref:ROOT:README.adoc[README]
 ** xref:ROOT:README.adoc#states[Available states]
