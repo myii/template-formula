@@ -56,7 +56,7 @@
   </nav>
 </header>
 <div class="main-wrapper">
-<div class="navigation-container" data-component="template-formula" data-version="1.3.0">
+<div class="navigation-container" data-component="template-formula" data-version="1.3.4">
   <aside class="navigation">
     <div class="panels">
 <div class="navigation-menu is-active" data-panel="menu">
@@ -65,13 +65,49 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
     <button class="nav-toggle"></button>
+    <span class="nav-text">General</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="CONTRIBUTING.html">How to contribute</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="CONTRIBUTING.html#commit_message_formatting">Commit message formatting</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="CONTRIBUTING.html#automatic_version_bump">Automatic version bump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="CONTRIBUTING.html#commit_type_vs_version_bump">Commit type vs. version bump</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="CONTRIBUTING.html#documentation">Documentation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="CONTRIBUTING.html#saltstack_formulas_rst_page_template">RST page template</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-toggle"></button>
     <span class="nav-text">Formula</span>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-toggle"></button>
     <a class="nav-link" href="README.html">README</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#states">Available states</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="CONTRIBUTING.html">How to contribute</a>
+</ul>
   </li>
 </ul>
   </li>
@@ -81,7 +117,7 @@
 <div class="navigation-explore" data-panel="explore">
   <div class="context">
     <span class="title">template-formula</span>
-    <span class="version">1.3.0</span>
+    <span class="version">1.3.4</span>
   </div>
   <ul class="components">
     <li class="component is-current">
@@ -90,8 +126,8 @@
         <li class="version is-latest">
           <a href="../1.3.5/README.html">1.3.5</a>
         </li>
-        <li class="version">
-          <a href="../1.3.4/README.html">1.3.4</a>
+        <li class="version is-current">
+          <a href="README.html">1.3.4</a>
         </li>
         <li class="version">
           <a href="../1.3.3/README.html">1.3.3</a>
@@ -102,8 +138,8 @@
         <li class="version">
           <a href="../1.3.1/README.html">1.3.1</a>
         </li>
-        <li class="version is-current">
-          <a href="README.html">1.3.0</a>
+        <li class="version">
+          <a href="../1.3.0/README.html">1.3.0</a>
         </li>
       </ul>
     </li>
@@ -124,17 +160,17 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="versions-menu-toggle" title="Show other versions of page">1.3.0</button>
+  <button class="versions-menu-toggle" title="Show other versions of page">1.3.4</button>
   <div class="versions-menu">
     <a class="version" href="../1.3.5/README.html">1.3.5</a>
-    <a class="version" href="../1.3.4/README.html">1.3.4</a>
+    <a class="version is-current" href="README.html">1.3.4</a>
     <a class="version" href="../1.3.3/README.html">1.3.3</a>
     <a class="version" href="../1.3.2/README.html">1.3.2</a>
     <a class="version" href="../1.3.1/README.html">1.3.1</a>
-    <a class="version is-current" href="README.html">1.3.0</a>
+    <a class="version" href="../1.3.0/README.html">1.3.0</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/myii/template-formula/blob/v1.3.0/adoc/modules/ROOT/pages/README.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/myii/template-formula/blob/v1.3.4/adoc/modules/ROOT/pages/README.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1>template-formula</h1>
@@ -155,7 +191,7 @@ as a style guide.</p>
 <ul class="sectlevel1">
 <li><a href="#_general_notes">1. General notes</a></li>
 <li><a href="#_contributing_to_this_repo">2. Contributing to this repo</a></li>
-<li><a href="#_available_states">3. Available states</a>
+<li><a href="#states">3. Available states</a>
 <ul class="sectlevel2">
 <li><a href="#_template">3.1. <code>template</code></a></li>
 <li><a href="#_template_package">3.2. <code>template.package</code></a></li>
@@ -213,7 +249,7 @@ for more details.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_available_states"><a class="anchor" href="#_available_states"></a>3. Available states</h2>
+<h2 id="states"><a class="anchor" href="#states"></a>3. Available states</h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="_template"><a class="anchor" href="#_template"></a>3.1. <code>template</code></h3>

@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to contribute :: SaltStack Formulas</title>
+    <link rel="canonical" href="https://myii.github.io/template-formula/template-formula/1.3.5/CONTRIBUTING.html">
+    <meta name="generator" content="Antora 2.0.0">
+    <link rel="stylesheet" href="../../_/css/site.css">
+  </head>
+  <body class="article">
+<header class="header">
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <a class="navbar-item" href="https://myii.github.io/template-formula">SaltStack Formulas</a>
+      <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item" href="#">Home</a>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Products</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Product A</a>
+            <a class="navbar-item" href="#">Product B</a>
+            <a class="navbar-item" href="#">Product C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Services</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Service A</a>
+            <a class="navbar-item" href="#">Service B</a>
+            <a class="navbar-item" href="#">Service C</a>
+          </div>
+        </div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="#">Resource A</a>
+            <a class="navbar-item" href="#">Resource B</a>
+            <a class="navbar-item" href="#">Resource C</a>
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="control">
+            <a class="button is-primary" href="#">Download</a>
+          </span>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<div class="main-wrapper">
+<div class="navigation-container" data-component="template-formula" data-version="1.3.3">
+  <aside class="navigation">
+    <div class="panels">
+<div class="navigation-menu is-active" data-panel="menu">
+  <nav class="nav-menu">
+    <h3 class="title"><a href="README.html">template-formula</a></h3>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="0">
+    <button class="nav-toggle"></button>
+    <span class="nav-text">Formula</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="README.html">README</a>
+  </li>
+  <li class="nav-item is-current-page" data-depth="1">
+    <a class="nav-link" href="CONTRIBUTING.html">How to contribute</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </nav>
+</div>
+<div class="navigation-explore" data-panel="explore">
+  <div class="context">
+    <span class="title">template-formula</span>
+    <span class="version">1.3.3</span>
+  </div>
+  <ul class="components">
+    <li class="component is-current">
+      <span class="title">template-formula</span>
+      <ul class="versions">
+        <li class="version is-latest">
+          <a href="../1.3.5/README.html">1.3.5</a>
+        </li>
+        <li class="version">
+          <a href="../1.3.4/README.html">1.3.4</a>
+        </li>
+        <li class="version is-current">
+          <a href="README.html">1.3.3</a>
+        </li>
+        <li class="version">
+          <a href="../1.3.2/README.html">1.3.2</a>
+        </li>
+        <li class="version">
+          <a href="../1.3.1/README.html">1.3.1</a>
+        </li>
+        <li class="version">
+          <a href="../1.3.0/README.html">1.3.0</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    </div>
+  </aside>
+</div>
+  <main class="main">
+<div class="toolbar" role="navigation">
+  <button class="navigation-toggle"></button>
+  <a href="../1.3.5/README.html" class="home-link"></a>
+<nav class="crumbs" aria-label="breadcrumbs">
+  <ul>
+    <li class="crumb"><a href="README.html">template-formula</a></li>
+    <li class="crumb">Formula</li>
+    <li class="crumb"><a href="CONTRIBUTING.html">How to contribute</a></li>
+  </ul>
+</nav>
+<div class="page-versions">
+  <button class="versions-menu-toggle" title="Show other versions of page">1.3.3</button>
+  <div class="versions-menu">
+    <a class="version" href="../1.3.5/CONTRIBUTING.html">1.3.5</a>
+    <a class="version" href="../1.3.4/CONTRIBUTING.html">1.3.4</a>
+    <a class="version is-current" href="CONTRIBUTING.html">1.3.3</a>
+    <a class="version" href="../1.3.2/CONTRIBUTING.html">1.3.2</a>
+    <a class="version" href="../1.3.1/CONTRIBUTING.html">1.3.1</a>
+    <a class="version" href="../1.3.0/CONTRIBUTING.html">1.3.0</a>
+  </div>
+</div>
+  <div class="edit-this-page"><a href="https://github.com/myii/template-formula/blob/v1.3.3/adoc/modules/ROOT/pages/CONTRIBUTING.adoc">Edit this Page</a></div>
+</div>
+<article class="doc">
+<h1>How to contribute</h1>
+<div id="preamble">
+<div class="sectionbody">
+<div class="paragraph">
+<p>This document will eventually outline all aspects of guidance to make
+your contributing experience a fruitful and enjoyable one.
+What it already contains is information about <em>commit message formatting</em>
+and how that directly affects the numerous automated processes that are used
+for this repo.
+It also covers how to contribute to this <em>formula&#8217;s documentation</em>.</p>
+</div>
+<div id="toc" class="toc">
+<div id="toctitle" class="title">TABLE OF CONTENTS</div>
+<ul class="sectlevel1">
+<li><a href="#_overview">1. Overview</a></li>
+<li><a href="#_commit_message_formatting">2. Commit message formatting</a>
+<ul class="sectlevel2">
+<li><a href="#_automation_of_multiple_processes">2.1. Automation of multiple processes</a></li>
+<li><a href="#_linting_commit_messages_in_travis_ci">2.2. Linting commit messages in Travis CI</a></li>
+<li><a href="#_relationship_between_commit_type_and_version_bump">2.3. Relationship between commit type and version bump</a></li>
+<li><a href="#_use_breaking_change_to_trigger_a_major_version_change">2.4. Use <code>BREAKING CHANGE</code> to trigger a <code>major</code> version change</a></li>
+</ul>
+</li>
+<li><a href="#_documentation">3. Documentation</a>
+<ul class="sectlevel2">
+<li><a href="#_toolchain">3.1. Toolchain</a></li>
+<li><a href="#_adding_a_new_page">3.2. Adding a new page</a></li>
+<li><a href="#_saltstack_formulas_rst_page_template">3.3. SaltStack-Formulas' RST page template</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_overview"><a class="anchor" href="#_overview"></a>1. Overview</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Submitting a pull request is more than just code!
+To achieve a quality product,
+the <em>tests</em> and <em>documentation</em> need to be updated as well.
+An excellent pull request will include these in the changes,
+wherever relevant.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_commit_message_formatting"><a class="anchor" href="#_commit_message_formatting"></a>2. Commit message formatting</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Since every type of change requires making Git commits,
+we will start by covering the importance of ensuring that
+all of your commit messages are in the correct format.</p>
+</div>
+<div class="sect2">
+<h3 id="_automation_of_multiple_processes"><a class="anchor" href="#_automation_of_multiple_processes"></a>2.1. Automation of multiple processes</h3>
+<div class="paragraph">
+<p>This formula uses
+<a href="https://github.com/semantic-release/semantic-release">semantic-release</a>
+for automating numerous processes such as
+bumping the version number appropriately,
+creating new tags/releases
+and updating the changelog.
+The entire process relies on the structure of commit messages to
+determine the version bump,
+which is then used for the rest of the automation.</p>
+</div>
+<div class="paragraph">
+<p>Full details are available in the upstream docs regarding the
+<a href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#-git-commit-guidelines">Angular
+Commit Message Conventions</a>.
+The key factor is that the first line of the commit message must follow this format:</p>
+</div>
+<div class="listingblock">
+<div class="title">Commit message format</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code>type(scope): subject</code></pre>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>E.g. <code>docs(contributing): add commit message formatting instructions</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Besides the version bump,
+the changelog and release notes are formatted accordingly.
+So based on the example above:</p>
+</div>
+<div class="quoteblock">
+<blockquote>
+<div class="paragraph">
+<p><h3>Documentation</h3></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>contributing:</strong> add commit message formatting instructions</p>
+</li>
+</ul>
+</div>
+</blockquote>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The <code>type</code> translates into a <code>Documentation</code> sub-heading.</p>
+</li>
+<li>
+<p>The <code>(scope):</code> will be shown in bold text without the brackets.</p>
+</li>
+<li>
+<p>The <code>subject</code> follows the <code>scope</code> as standard text.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_linting_commit_messages_in_travis_ci"><a class="anchor" href="#_linting_commit_messages_in_travis_ci"></a>2.2. Linting commit messages in Travis CI</h3>
+<div class="paragraph">
+<p>This formula uses
+<a href="https://github.com/conventional-changelog/commitlint">commitlint</a>
+for checking commit messages during CI testing.
+This ensures that they are in accordance with the <code>semantic-release</code> settings.</p>
+</div>
+<div class="paragraph">
+<p>For more details about the default settings,
+refer back to the <code>commitlint</code>
+<a href="https://conventional-changelog.github.io/commitlint/#/reference-rules">reference
+rules</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_relationship_between_commit_type_and_version_bump"><a class="anchor" href="#_relationship_between_commit_type_and_version_bump"></a>2.3. Relationship between commit type and version bump</h3>
+<div class="paragraph">
+<p>This formula applies some customisations to the defaults,
+as outlined in the table below, based upon the
+<a href="https://github.com/angular/angular.js/blob/master/DEVELOPERS.md#type">type</a>
+of the commit:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch left">
+<caption class="title">Table 1. Commit type vs. version bump</caption>
+<colgroup>
+<col style="width: 14%;">
+<col style="width: 25%;">
+<col style="width: 37%;">
+<col style="width: 12%;">
+<col style="width: 12%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-center valign-middle">Type</th>
+<th class="tableblock halign-center valign-middle">Heading</th>
+<th class="tableblock halign-center valign-middle">Description</th>
+<th class="tableblock halign-center valign-middle">Bump (default)</th>
+<th class="tableblock halign-center valign-middle">Bump (custom)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>build</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Build System</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Changes related to the build system</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>–</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>chore</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">–</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Changes to the build process or auxiliary tools
+and libraries such as documentation generation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>–</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>ci</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Continuous Integration</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Changes to the continuous integration configuration</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>–</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>docs</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Documentation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Documentation only changes</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>–</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0.0.1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>feat</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Features</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A new feature</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0.1.0</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>fix</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Bug Fixes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A bug fix</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0.0.1</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>perf</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Performance Improvements</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A code change that improves performance</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0.0.1</code></p></td>
+<td class="tableblock halign-center valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>refactor</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Code Refactoring</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A code change that neither fixes a bug nor adds a feature</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>–</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0.0.1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>revert</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reverts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">A commit used to revert a previous commit</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>–</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0.0.1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>style</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Styles</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Changes that do not affect the meaning of the code
+(white-space, formatting, missing semi-colons, etc.)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>–</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0.0.1</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>test</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Tests</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Adding missing or correcting existing tests</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>–</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>0.0.1</code></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_use_breaking_change_to_trigger_a_major_version_change"><a class="anchor" href="#_use_breaking_change_to_trigger_a_major_version_change"></a>2.4. Use <code>BREAKING CHANGE</code> to trigger a <code>major</code> version change</h3>
+<div class="paragraph">
+<p>Adding <code>BREAKING CHANGE</code> to the footer of the extended description of the
+commit message will <strong>always</strong> trigger a <code>major</code> version change,
+no matter which type has been used.
+This will be appended to the changelog and release notes as well.
+To preserve good formatting of these notes,
+the following format is prescribed:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>BREAKING CHANGE: &lt;explanation in paragraph format&gt;.</code></p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>An example of that:</p>
+</div>
+<div class="listingblock">
+<div class="title">Example of supplying <code>BREAKING CHANGE</code> in a commit message</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-git hljs" data-lang="git">...
+
+BREAKING CHANGE: With the removal of all of the `.sls` files under
+`template package`, this formula no longer supports the installation of
+packages.</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_documentation"><a class="anchor" href="#_documentation"></a>3. Documentation</h2>
+<div class="sectionbody">
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="title">This section refers to the <em>Read the Docs</em> documentation</div>
+<div class="paragraph">
+<p>This section is relevant to the <em>Read the Docs</em> documentation
+that currently exists while this <em>Antora</em> solution is being evaluated.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_toolchain"><a class="anchor" href="#_toolchain"></a>3.1. Toolchain</h3>
+<div class="paragraph">
+<p>The documentation for this formula is written in
+<a href="https://en.wikipedia.org/wiki/ReStructuredText">reStructuredText</a>
+(also known as RST, ReST, or reST).
+It is built by
+<a href="https://en.wikipedia.org/wiki/Sphinx_(documentation_generator)">Sphinx</a>
+and hosted on <a href="https://en.wikipedia.org/wiki/Read_the_Docs">Read the Docs</a>.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_adding_a_new_page"><a class="anchor" href="#_adding_a_new_page"></a>3.2. Adding a new page</h3>
+<div class="paragraph">
+<p>Adding a new page involves two steps:</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Use the
+<a href="#saltstack_formulas_rst_page_template">provided page template</a>
+to create a new page.</p>
+</li>
+<li>
+<p>Add the page name under the <code>toctree</code> list in <code>index.rst</code>.</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>Do not just append it to the list.</p>
+</li>
+<li>
+<p>Select the best place where it fits within the overall documentation.</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_saltstack_formulas_rst_page_template"><a class="anchor" href="#_saltstack_formulas_rst_page_template"></a>3.3. SaltStack-Formulas' RST page template</h3>
+<div class="paragraph">
+<p>Use the following template when creating a new page.
+This ensures consistency across the documentation for this formula.
+The heading symbols have been selected in accordance to the
+output rendered by the
+<a href="https://github.com/miyakogi/m2r#restrictions">Markdown to
+reStructuredText converter</a>
+we are using for some of the pages of this documentation.</p>
+</div>
+<div id="saltstack_formulas_rst_page_template" class="listingblock">
+<div class="title">RST page template</div>
+<div class="content">
+<pre class="highlightjs highlight nowrap"><code class="language-rst hljs" data-lang="rst">.. _template: <i class="conum" data-value="1"></i><b>(1)</b>
+
+[Page title] <i class="conum" data-value="2"></i><b>(2)</b>
+============
+
+[Introductory paragraph] <i class="conum" data-value="3"></i><b>(3)</b>
+
+.. contents:: **Table of Contents** <i class="conum" data-value="4"></i><b>(4)</b>
+
+[Heading 2] <i class="conum" data-value="5"></i><b>(5)</b>
+-----------
+
+[Heading 3] <i class="conum" data-value="5"></i><b>(5)</b>
+^^^^^^^^^^^
+
+[Heading 4] <i class="conum" data-value="5"></i><b>(5)</b>
+~~~~~~~~~~~
+
+[Heading 5] <i class="conum" data-value="6"></i><b>(6)</b>
+"""""""""""
+
+[Heading 6] <i class="conum" data-value="6"></i><b>(6)</b>
+###########</code></pre>
+</div>
+</div>
+<div class="colist arabic">
+<table>
+<tr>
+<td><i class="conum" data-value="1"></i><b>1</b></td>
+<td>The first line is an anchor that can be used to link back to
+(the top of) this file.
+<div class="ulist">
+<ul>
+<li>
+<p>Change this to be the lowercase version of the file name.</p>
+</li>
+<li>
+<p>Do not include the <code>.rst</code> file extension.</p>
+</li>
+<li>
+<p>Use hyphens (<code>-</code>) instead of spaces or non-letter characters.</p>
+</li>
+</ul>
+</div></td>
+</tr>
+<tr>
+<td><i class="conum" data-value="2"></i><b>2</b></td>
+<td>Change the <code>[Page title]</code> accordingly.
+Match the same number of equals signs (<code>=</code>) underneath.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="3"></i><b>3</b></td>
+<td>Change the <code>[Introductory paragraph]</code> to be
+a short summary of the page content.
+Use no more than three paragraphs for this.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="4"></i><b>4</b></td>
+<td>Leave the <code>..contents:: <strong>Table of Contents</strong></code> line as it is.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="5"></i><b>5</b></td>
+<td>Use the remaining headings as required to break up the page content.
+Again, no single heading should have more than about
+three paragraphs of content before the next heading or sub-heading is used.</td>
+</tr>
+<tr>
+<td><i class="conum" data-value="6"></i><b>6</b></td>
+<td>You will rarely need to use beyond <code>[Heading 4]</code>.</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Obviously, it is not necessary to follow the steps in the order above.
+For example, it is usually easier to write the <code>[Introductory paragraph]</code>
+at the end.</p>
+</div>
+</div>
+</div>
+</div>
+</article>
+  </main>
+</div>
+<footer class="footer">
+  <p>This page was built using the Antora default UI.</p>
+  <p>The source code for this UI is licensed under the terms of the MPL-2.0 license.</p>
+</footer>
+<script src="../../_/js/site.js"></script>
+<script src="../../_/js/vendor/highlight.js"></script>
+<script>hljs.initHighlighting()</script>
+  </body>
+</html>

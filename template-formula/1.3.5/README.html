@@ -56,7 +56,7 @@
   </nav>
 </header>
 <div class="main-wrapper">
-<div class="navigation-container" data-component="template-formula" data-version="1.3.0">
+<div class="navigation-container" data-component="template-formula" data-version="1.3.5">
   <aside class="navigation">
     <div class="panels">
 <div class="navigation-menu is-active" data-panel="menu">
@@ -65,13 +65,49 @@
 <ul class="nav-list">
   <li class="nav-item" data-depth="0">
     <button class="nav-toggle"></button>
+    <span class="nav-text">General</span>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="1">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="CONTRIBUTING.html">How to contribute</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="CONTRIBUTING.html#commit_message_formatting">Commit message formatting</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="CONTRIBUTING.html#automatic_version_bump">Automatic version bump</a>
+  </li>
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="CONTRIBUTING.html#commit_type_vs_version_bump">Commit type vs. version bump</a>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="2">
+    <button class="nav-toggle"></button>
+    <a class="nav-link" href="CONTRIBUTING.html#documentation">Documentation</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="3">
+    <a class="nav-link" href="CONTRIBUTING.html#saltstack_formulas_rst_page_template">RST page template</a>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+</ul>
+  </li>
+  <li class="nav-item" data-depth="0">
+    <button class="nav-toggle"></button>
     <span class="nav-text">Formula</span>
 <ul class="nav-list">
   <li class="nav-item is-current-page" data-depth="1">
+    <button class="nav-toggle"></button>
     <a class="nav-link" href="README.html">README</a>
+<ul class="nav-list">
+  <li class="nav-item" data-depth="2">
+    <a class="nav-link" href="#states">Available states</a>
   </li>
-  <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="CONTRIBUTING.html">How to contribute</a>
+</ul>
   </li>
 </ul>
   </li>
@@ -81,14 +117,14 @@
 <div class="navigation-explore" data-panel="explore">
   <div class="context">
     <span class="title">template-formula</span>
-    <span class="version">1.3.0</span>
+    <span class="version">1.3.5</span>
   </div>
   <ul class="components">
     <li class="component is-current">
       <span class="title">template-formula</span>
       <ul class="versions">
-        <li class="version is-latest">
-          <a href="../1.3.5/README.html">1.3.5</a>
+        <li class="version is-current is-latest">
+          <a href="README.html">1.3.5</a>
         </li>
         <li class="version">
           <a href="../1.3.4/README.html">1.3.4</a>
@@ -102,8 +138,8 @@
         <li class="version">
           <a href="../1.3.1/README.html">1.3.1</a>
         </li>
-        <li class="version is-current">
-          <a href="README.html">1.3.0</a>
+        <li class="version">
+          <a href="../1.3.0/README.html">1.3.0</a>
         </li>
       </ul>
     </li>
@@ -115,7 +151,7 @@
   <main class="main">
 <div class="toolbar" role="navigation">
   <button class="navigation-toggle"></button>
-  <a href="../1.3.5/README.html" class="home-link"></a>
+  <a href="README.html" class="home-link is-current"></a>
 <nav class="crumbs" aria-label="breadcrumbs">
   <ul>
     <li class="crumb"><a href="README.html">template-formula</a></li>
@@ -124,17 +160,17 @@
   </ul>
 </nav>
 <div class="page-versions">
-  <button class="versions-menu-toggle" title="Show other versions of page">1.3.0</button>
+  <button class="versions-menu-toggle" title="Show other versions of page">1.3.5</button>
   <div class="versions-menu">
-    <a class="version" href="../1.3.5/README.html">1.3.5</a>
+    <a class="version is-current" href="README.html">1.3.5</a>
     <a class="version" href="../1.3.4/README.html">1.3.4</a>
     <a class="version" href="../1.3.3/README.html">1.3.3</a>
     <a class="version" href="../1.3.2/README.html">1.3.2</a>
     <a class="version" href="../1.3.1/README.html">1.3.1</a>
-    <a class="version is-current" href="README.html">1.3.0</a>
+    <a class="version" href="../1.3.0/README.html">1.3.0</a>
   </div>
 </div>
-  <div class="edit-this-page"><a href="https://github.com/myii/template-formula/blob/v1.3.0/adoc/modules/ROOT/pages/README.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/myii/template-formula/blob/v1.3.5/adoc/modules/ROOT/pages/README.adoc">Edit this Page</a></div>
 </div>
 <article class="doc">
 <h1>template-formula</h1>
@@ -153,18 +189,18 @@ as a style guide.</p>
 <div id="toc" class="toc">
 <div id="toctitle" class="title">TABLE OF CONTENTS</div>
 <ul class="sectlevel1">
-<li><a href="#_general_notes">1. General notes</a></li>
-<li><a href="#_contributing_to_this_repo">2. Contributing to this repo</a></li>
-<li><a href="#_available_states">3. Available states</a>
+<li><a href="#_general_notes">General notes</a></li>
+<li><a href="#_contributing_to_this_repo">1. Contributing to this repo</a></li>
+<li><a href="#states">2. Available states</a>
 <ul class="sectlevel2">
-<li><a href="#_template">3.1. <code>template</code></a></li>
-<li><a href="#_template_package">3.2. <code>template.package</code></a></li>
-<li><a href="#_template_config">3.3. <code>template.config</code></a></li>
-<li><a href="#_template_service">3.4. <code>template.service</code></a></li>
-<li><a href="#_template_clean">3.5. <code>template.clean</code></a></li>
-<li><a href="#_template_service_clean">3.6. <code>template.service.clean</code></a></li>
-<li><a href="#_template_config_clean">3.7. <code>template.config.clean</code></a></li>
-<li><a href="#_template_package_clean">3.8. <code>template.package.clean</code></a></li>
+<li><a href="#_template">2.1. <code>template</code></a></li>
+<li><a href="#_template_package">2.2. <code>template.package</code></a></li>
+<li><a href="#_template_config">2.3. <code>template.config</code></a></li>
+<li><a href="#_template_service">2.4. <code>template.service</code></a></li>
+<li><a href="#_template_clean">2.5. <code>template.clean</code></a></li>
+<li><a href="#_template_service_clean">2.6. <code>template.service.clean</code></a></li>
+<li><a href="#_template_config_clean">2.7. <code>template.config.clean</code></a></li>
+<li><a href="#_template_package_clean">2.8. <code>template.package.clean</code></a></li>
 </ul>
 </li>
 </ul>
@@ -172,7 +208,7 @@ as a style guide.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_general_notes"><a class="anchor" href="#_general_notes"></a>1. General notes</h2>
+<h2 id="_general_notes"><a class="anchor" href="#_general_notes"></a>General notes</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>See the full
@@ -200,7 +236,7 @@ for more details.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_contributing_to_this_repo"><a class="anchor" href="#_contributing_to_this_repo"></a>2. Contributing to this repo</h2>
+<h2 id="_contributing_to_this_repo"><a class="anchor" href="#_contributing_to_this_repo"></a>1. Contributing to this repo</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Commit message formatting is significant!!</strong></p>
@@ -213,10 +249,10 @@ for more details.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_available_states"><a class="anchor" href="#_available_states"></a>3. Available states</h2>
+<h2 id="states"><a class="anchor" href="#states"></a>2. Available states</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_template"><a class="anchor" href="#_template"></a>3.1. <code>template</code></h3>
+<h3 id="_template"><a class="anchor" href="#_template"></a>2.1. <code>template</code></h3>
 <div class="paragraph">
 <p><em>Meta-state (this is a state that includes other states)</em>.</p>
 </div>
@@ -227,27 +263,27 @@ and then starts the associated template service.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_template_package"><a class="anchor" href="#_template_package"></a>3.2. <code>template.package</code></h3>
+<h3 id="_template_package"><a class="anchor" href="#_template_package"></a>2.2. <code>template.package</code></h3>
 <div class="paragraph">
 <p>This state will install the template package only.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_template_config"><a class="anchor" href="#_template_config"></a>3.3. <code>template.config</code></h3>
+<h3 id="_template_config"><a class="anchor" href="#_template_config"></a>2.3. <code>template.config</code></h3>
 <div class="paragraph">
 <p>This state will configure the template service
 and has a dependency on <code>template.install</code> via. the <code>include</code> list.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_template_service"><a class="anchor" href="#_template_service"></a>3.4. <code>template.service</code></h3>
+<h3 id="_template_service"><a class="anchor" href="#_template_service"></a>2.4. <code>template.service</code></h3>
 <div class="paragraph">
 <p>This state will start the template service
 and has a dependency on <code>template.config</code> via. the <code>include</code> list.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_template_clean"><a class="anchor" href="#_template_clean"></a>3.5. <code>template.clean</code></h3>
+<h3 id="_template_clean"><a class="anchor" href="#_template_clean"></a>2.5. <code>template.clean</code></h3>
 <div class="paragraph">
 <p><em>Meta-state (this is a state that includes other states)</em>.</p>
 </div>
@@ -260,20 +296,20 @@ and then uninstalls the package.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_template_service_clean"><a class="anchor" href="#_template_service_clean"></a>3.6. <code>template.service.clean</code></h3>
+<h3 id="_template_service_clean"><a class="anchor" href="#_template_service_clean"></a>2.6. <code>template.service.clean</code></h3>
 <div class="paragraph">
 <p>This state will stop the template service and disable it at boot time.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_template_config_clean"><a class="anchor" href="#_template_config_clean"></a>3.7. <code>template.config.clean</code></h3>
+<h3 id="_template_config_clean"><a class="anchor" href="#_template_config_clean"></a>2.7. <code>template.config.clean</code></h3>
 <div class="paragraph">
 <p>This state will remove the configuration of the template service
 and has a dependency on <code>template.service.clean</code> via. the <code>include</code> list.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_template_package_clean"><a class="anchor" href="#_template_package_clean"></a>3.8. <code>template.package.clean</code></h3>
+<h3 id="_template_package_clean"><a class="anchor" href="#_template_package_clean"></a>2.8. <code>template.package.clean</code></h3>
 <div class="paragraph">
 <p>This state will remove the template package
 and has a depency on <code>template.config.clean</code> via. the <code>include</code> list.</p>
