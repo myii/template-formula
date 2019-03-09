@@ -417,7 +417,7 @@ Configure NTP:
     - template: jinja
     - source: {{ files_switch(
                   salt['config.get'](
-                      tplroot ~ ':tofs:files:Configure NTP',
+                      tplroot ~ ':tofs:source_files:Configure NTP',
                       ['/etc/ntp.conf.jinja']
                   )
             ) }}
@@ -427,7 +427,7 @@ Configure NTP:
       - pkg: Install NTP package
 ----
 
-* This uses `config.get`, searching for `nfs:tofs:files:Configure NTP`
+* This uses `config.get`, searching for `nfs:tofs:source_files:Configure NTP`
 to determine the list of template files to use.
 * If this does not yield any results, the default of
 `['/etc/ntp.conf.jinja']` will be used.
@@ -537,16 +537,16 @@ Resulting in:
       - salt://ntp/files/default_alt/etc/ntp.conf.jinja
 ----
 
-==== Customise the list of template `files`
+==== Customise the list of `source_files`
 
-The list of template `files` can be given:
+The list of `source_files` can be given:
 
-.Customise template `files`
+.Customise `source_files`
 [source%nowrap, yaml]
 ----
 ntp:
   tofs:
-    files:
+    source_files:
       Configure NTP:
         - '/etc/ntp.conf.jinja'
         - '/etc/ntp.conf_alt.jinja'
@@ -554,7 +554,7 @@ ntp:
 
 Resulting in:
 
-.`source` with template `files` customised
+.`source` with `source_files` customised
 [source%nowrap, yaml]
 ----
     - source:
