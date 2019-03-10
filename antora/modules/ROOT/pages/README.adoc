@@ -34,6 +34,11 @@ https://docs.saltstack.com/en/latest/topics/development/conventions/formulas.htm
 Versioning Section]
 for more details.
 
+This formula uses the Template Override and Files Switch (TOFS) pattern.
+Refer back to the
+xref:main:ROOT:TOFS_pattern.adoc[TOFS docs]
+for more information.
+
 == Contributing to this repo
 
 *Commit message formatting is significant!!*

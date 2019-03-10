@@ -1,4 +1,6 @@
 .General
+* xref:main:ROOT:README.adoc[Main docs]
+
 * xref:ROOT:CONTRIBUTING.adoc[How to contribute]
 ** xref:ROOT:CONTRIBUTING.adoc#commit_message_formatting[Commit message formatting]
 *** xref:ROOT:CONTRIBUTING.adoc#automatic_version_bump[Automatic version bump]
@@ -6,7 +8,7 @@
 ** xref:ROOT:CONTRIBUTING.adoc#documentation[Documentation]
 *** xref:ROOT:CONTRIBUTING.adoc#saltstack_formulas_rst_page_template[RST page template]
 
-* xref:ROOT:TOFS_pattern.adoc[TOFS: A pattern for using SaltStack]
+* xref:main:ROOT:TOFS_pattern.adoc[TOFS: A pattern for using SaltStack]
 
 .Formula
 * xref:ROOT:README.adoc[README]
