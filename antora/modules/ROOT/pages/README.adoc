@@ -36,7 +36,7 @@ for more details.
 
 This formula uses the Template Override and Files Switch (TOFS) pattern.
 Refer back to the
-xref:main:ROOT:TOFS_pattern.adoc[TOFS docs]
+xref:main::TOFS_pattern.adoc[TOFS docs]
 for more information.
 
 == Contributing to this repo
@@ -44,7 +44,7 @@ for more information.
 *Commit message formatting is significant!!*
 
 Please see
-xref:ROOT:CONTRIBUTING.adoc[How to contribute]
+xref:CONTRIBUTING.adoc[How to contribute]
 for more details.
 
 [#states]
