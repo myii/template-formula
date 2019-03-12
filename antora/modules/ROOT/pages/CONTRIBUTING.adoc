@@ -230,7 +230,7 @@ we are using for some of the pages of this documentation.
 
 [#saltstack_formulas_rst_page_template]
 .RST page template
-[source%nowrap, rst]
+[source%nowrap, rest]
 ----
 .. _template: # <1>
 
