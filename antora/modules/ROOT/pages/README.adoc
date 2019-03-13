@@ -44,7 +44,7 @@ for more information.
 *Commit message formatting is significant!!*
 
 Please see
-xref:CONTRIBUTING.adoc[How to contribute]
+xref:main::CONTRIBUTING.adoc[How to contribute]
 for more details.
 
 [#states]
