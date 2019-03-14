@@ -6,3 +6,4 @@
 .Formula
 * xref:README.adoc[README]
 ** xref:README.adoc#states[Available states]
+* xref:AUTHORS.adoc[Contributors]
