@@ -1,4 +1,9 @@
 {%- set tplroot = tpldir.split('/')[0] %}
+{%- do salt.log.error('tplroot\n' ~ tplroot) %}
+{%- do salt.log.error('tplfile\n' ~ tplfile) %}
+{%- do salt.log.error('tpldir\n' ~ tpldir) %}
+{%- do salt.log.error('tpldot\n' ~ tpldot) %}
+{%- do salt.log.error('slspath\n' ~ slspath) %}
 {%- from tplroot ~ "/map.jinja" import template with context %}
 
 {% for key,value in {
