@@ -26,6 +26,7 @@ services:
 #       Ref: https://github.com/saltstack-formulas/template-formula/issues/121
 env:
   matrix:
+    - INSTANCE: default- ubuntu-1804-develop-py3
     - INSTANCE: default-debian-9-2019-2-py3
     # - INSTANCE: default-ubuntu-1804-2019-2-py3
     - INSTANCE: default-centos-7-2019-2-py3
