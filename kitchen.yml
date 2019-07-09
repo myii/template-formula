@@ -30,9 +30,9 @@ platforms:
       provision_command:
         - curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
         - sh bootstrap-salt.sh -XdPbfrq -x python3 git develop
-  - name: fedora-29-develop-py3
+  - name: fedora-30-develop-py3
     driver:
-      image: netmanagers/salt-develop-py3:fedora-29
+      image: netmanagers/salt-develop-py3:fedora-30
       provision_command:
         - curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
         - sh bootstrap-salt.sh -XdPbfrq -x python3 git develop
@@ -54,9 +54,9 @@ platforms:
   - name: centos-7-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:centos-7
-  - name: fedora-29-2019-2-py3
+  - name: fedora-30-2019-2-py3
     driver:
-      image: netmanagers/salt-2019.2-py3:fedora-29
+      image: netmanagers/salt-2019.2-py3:fedora-30
   - name: opensuse-leap-15-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:opensuse-leap-15
@@ -75,15 +75,9 @@ platforms:
   - name: fedora-29-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:fedora-29
-  # TODO: Use this when fixed instead of `opensuse-leap-42`
-  # Ref: https://github.com/netmanagers/salt-image-builder/issues/2
-  # - name: opensuse-leap-15-2018-3-py2
-  #   driver:
-  #     image: netmanagers/salt-2018.3-py2:opensuse-leap-15
-  #     run_command: /usr/lib/systemd/systemd
-  - name: opensuse-leap-42-2018-3-py2
+  - name: opensuse-leap-15-2018-3-py2
     driver:
-      image: netmanagers/salt-2018.3-py2:opensuse-leap-42
+      image: netmanagers/salt-2018.3-py2:opensuse-leap-15
       run_command: /usr/lib/systemd/systemd
 
   ## SALT 2017.7
@@ -93,17 +87,16 @@ platforms:
   - name: ubuntu-1604-2017-7-py2
     driver:
       image: netmanagers/salt-2017.7-py2:ubuntu-16.04
-  # TODO: Modify the formula to work for non-`systemd` platforms
   - name: centos-6-2017-7-py2
     driver:
       image: netmanagers/salt-2017.7-py2:centos-6
       run_command: /sbin/init
-  - name: fedora-28-2017-7-py2
+  - name: fedora-29-2017-7-py2
     driver:
-      image: netmanagers/salt-2017.7-py2:fedora-28
-  - name: opensuse-leap-42-2017-7-py2
+      image: netmanagers/salt-2017.7-py2:fedora-29
+  - name: opensuse-leap-15-2017-7-py2
     driver:
-      image: netmanagers/salt-2017.7-py2:opensuse-leap-42
+      image: netmanagers/salt-2017.7-py2:opensuse-leap-15
       run_command: /usr/lib/systemd/systemd
 
 provisioner:
