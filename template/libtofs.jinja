@@ -87,13 +87,12 @@
         {%- else %}
           {%- set fs_dir_lookup = salt['config.get'](tplroot ~ ':tofs:dirs:default', 'default') %}
         {%- endif %}
-	{#- Force the `config.get` lookup result as a list #}
+	{#- Force the `config.get` lookup result as a list where necessary #}
+	{#- since we need to also handle grains that are lists #}
 	{%- if fs_dir_lookup is string %}
-	  {%- set fs_dirs = [fs_dir_lookup] %}
-	{%- else %}
-	  {%- set fs_dirs = fs_dir_lookup %}
+	  {%- set fs_dir_lookup = [fs_dir_lookup] %}
 	{%- endif %}
-	{%- for fs_dir in fs_dirs %}
+	{%- for fs_dir in fs_dir_lookup %}
           {%- set url = [
               '- salt:/',
               path_prefix_inc_ext.strip('/'),

@@ -33,10 +33,10 @@ template:
     files_switch:
       - any/path/can/be/used/here
       - id
+      - roles
       - osfinger
       - os
       - os_family
-      - role
     # All aspects of path/file resolution are customisable using the options below.
     # This is unnecessary in most cases; there are sensible defaults.
     # path_prefix: template_alt
@@ -57,6 +57,6 @@ template:
   winner: pillar
   added_in_pillar: pillar_value
 
-role:
+roles:
   - foo
   - bar
