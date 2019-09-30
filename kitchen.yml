@@ -40,11 +40,10 @@ platforms:
     driver:
       image: opensuse/leap:15.1
       provision_command:
-        - zypper refresh && zypper install -y udev
         - systemctl enable sshd.service
       run_command: /usr/lib/systemd/systemd
     provisioner:
-      salt_bootstrap_options: -x python3 git develop
+      salt_bootstrap_options: -XdPfrq -x python3 git develop
       salt_install: bootstrap
     # Workaround to avoid intermittent failures on `opensuse-leap-15`:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
@@ -81,11 +80,10 @@ platforms:
     driver:
       image: opensuse/leap:15.1
       provision_command:
-        - zypper refresh && zypper install -y udev
         - systemctl enable sshd.service
       run_command: /usr/lib/systemd/systemd
     provisioner:
-      salt_bootstrap_options: -x python3 git 2019.2
+      salt_bootstrap_options: -XdPfrq -x python3 git 2019.2
       salt_install: bootstrap
     # Workaround to avoid intermittent failures on `opensuse-leap-15`:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
@@ -116,11 +114,10 @@ platforms:
     driver:
       image: opensuse/leap:15.1
       provision_command:
-        - zypper refresh && zypper install -y udev
         - systemctl enable sshd.service
       run_command: /usr/lib/systemd/systemd
     provisioner:
-      salt_bootstrap_options: -x python2 git 2018.3
+      salt_bootstrap_options: -XdPfrq -x python2 git 2018.3
       salt_install: bootstrap
     # Workaround to avoid intermittent failures on `opensuse-leap-15`:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
@@ -152,11 +149,10 @@ platforms:
     driver:
       image: opensuse/leap:15.1
       provision_command:
-        - zypper refresh && zypper install -y udev
         - systemctl enable sshd.service
       run_command: /usr/lib/systemd/systemd
     provisioner:
-      salt_bootstrap_options: -x python2 git 2017.7
+      salt_bootstrap_options: -XdPfrq -x python2 git 2017.7
       salt_install: bootstrap
     # Workaround to avoid intermittent failures on `opensuse-leap-15`:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
