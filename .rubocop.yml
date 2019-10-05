@@ -1,0 +1,4 @@
+# -*- coding: utf-8 -*-
+# vim: ft=yaml
+---
+inherit_from: .rubocop_todo.yml

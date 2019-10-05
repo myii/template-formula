@@ -3,8 +3,8 @@
 ---
 dist: bionic
 stages:
-  - test
   - lint
+  - test
   - name: release
     if: branch = master AND type != pull_request
 
@@ -70,6 +70,9 @@ jobs:
       node_js: lts/*
       before_install: skip
       script:
+        # Install and run `rubocop`
+        - gem install rubocop
+        - rubocop --safe-auto-correct
         # Install and run `yamllint`
         # Need at least `v1.17.0` for the `yaml-files` setting
         - pip install --user yamllint>=1.17.0
