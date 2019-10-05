@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 # Overide by OS
 package_name = 'bash'
-if os[:name] == 'centos' and os[:release].start_with?('6')
+if (os[:name] == 'centos') && os[:release].start_with?('6')
   package_name = 'cronie'
 end
 

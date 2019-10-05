@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 # Overide by OS
 service_name = 'systemd-udevd'
-if os[:name] == 'centos' and os[:release].start_with?('6')
+if (os[:name] == 'centos') && os[:release].start_with?('6')
   service_name = 'crond'
 end
 
