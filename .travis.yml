@@ -13,7 +13,9 @@ cache: bundler
 
 ## Script to run for the test stage
 script:
-  - bin/kitchen verify "${INSTANCE}"
+  - bin/kitchen converge "${INSTANCE}"
+  # yamllint disable-line rule:line-length
+  - bin/kitchen exec "${INSTANCE}" -c "sudo salt-call --config-dir=/tmp/kitchen/etc/salt saltcheck.run_state_tests template check_all=True"
 
 ## Stages and jobs matrix
 stages:
@@ -69,22 +71,22 @@ jobs:
     # - env: INSTANCE=default-amazonlinux-2-develop-py2
     # - env: INSTANCE=default-arch-base-latest-develop-py2
     # - env: INSTANCE=default-debian-9-2019-2-py3
-    - env: INSTANCE=default-ubuntu-1804-2019-2-py3
+    # - env: INSTANCE=default-ubuntu-1804-2019-2-py3
     # - env: INSTANCE=default-centos-7-2019-2-py3
     # - env: INSTANCE=default-fedora-30-2019-2-py3
     # - env: INSTANCE=default-opensuse-leap-15-2019-2-py3
-    - env: INSTANCE=default-amazonlinux-2-2019-2-py2
-    - env: INSTANCE=default-arch-base-latest-2019-2-py2
+    # - env: INSTANCE=default-amazonlinux-2-2019-2-py2
+    # - env: INSTANCE=default-arch-base-latest-2019-2-py2
     # - env: INSTANCE=default-debian-9-2018-3-py2
     # - env: INSTANCE=default-ubuntu-1604-2018-3-py2
     # - env: INSTANCE=default-centos-7-2018-3-py2
-    - env: INSTANCE=default-fedora-29-2018-3-py2
-    - env: INSTANCE=default-opensuse-leap-15-2018-3-py2
+    # - env: INSTANCE=default-fedora-29-2018-3-py2
+    # - env: INSTANCE=default-opensuse-leap-15-2018-3-py2
     # - env: INSTANCE=default-amazonlinux-2-2018-3-py2
     # - env: INSTANCE=default-arch-base-latest-2018-3-py2
     # - env: INSTANCE=default-debian-8-2017-7-py2
     # - env: INSTANCE=default-ubuntu-1604-2017-7-py2
-    - env: INSTANCE=centos6-centos-6-2017-7-py2
+    # - env: INSTANCE=centos6-centos-6-2017-7-py2
     # - env: INSTANCE=default-fedora-29-2017-7-py2
     # - env: INSTANCE=default-opensuse-leap-15-2017-7-py2
     # - env: INSTANCE=default-amazonlinux-2-2017-7-py2
