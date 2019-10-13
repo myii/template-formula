@@ -8,7 +8,7 @@
 {%- do salt.log.error('template\n' ~ template|yaml(False)) %}
 
 {% for key,value in {
-  'mode': '0644',
+  'mode': '0640',
   'user': 'root',
   'group': 'root',
 }.items() %}
