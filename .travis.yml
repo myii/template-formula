@@ -15,7 +15,8 @@ cache: bundler
 script:
   - bin/kitchen verify "${INSTANCE}"
   # yamllint disable-line rule:line-length
-  - bin/kitchen exec "${INSTANCE}" -c "sudo salt-call --config-dir=/tmp/kitchen/etc/salt saltcheck.run_highstate_tests"
+  - bin/kitchen exec "${INSTANCE}" -c
+    "sudo salt-call --config-dir=/tmp/kitchen/etc/salt saltcheck.run_highstate_tests"
 
 ## Stages and jobs matrix
 stages:
