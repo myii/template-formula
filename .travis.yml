@@ -14,12 +14,12 @@ cache: bundler
 ## Script to run for the test stage
 script:
   - bin/kitchen verify "${INSTANCE}"
-  # yamllint disable-line rule:line-length
-  - INSTANCE_PY=$(printf "${INSTANCE}" | tail -c 1)
+  # yamllint disable rule:line-length
   - bin/kitchen exec "${INSTANCE}" -c
       "sudo sed -i -e 's:return out_list:__context__['\''retcode'\''] =
       (1 if (failed + skipped + missing_tests) else 0)\n    &:'
-      $(python${INSTANCE_PY} -c 'import salt as _; print(_.__path__[0])')/modules/saltcheck.py"
+      \$(find /usr/lib/ -type d -name modules | grep packages/salt/modules)/saltcheck.py"
+  # yamllint enable rule:line-length
   - bin/kitchen exec "${INSTANCE}" -c
       "sudo salt-call
       --config-dir=/tmp/kitchen/etc/salt saltcheck.run_highstate_tests"
