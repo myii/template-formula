@@ -4,7 +4,8 @@
 {%- do salt.log.error('tpldir\n' ~ tpldir) %}
 {%- do salt.log.error('tpldot\n' ~ tpldot) %}
 {%- do salt.log.error('slspath\n' ~ slspath) %}
-{%- from tplroot ~ "/map.jinja" import template with context %}
+{%- from "template/map.jinja" import template with context %}
+{%- do salt.log.error('template\n' ~ template|yaml(False)) %}
 
 {% for key,value in {
   'mode': '0644',
@@ -23,13 +24,13 @@ template-config-file-file-managed-test-contents:
   module_and_function: file.search
   args:
     - {{ template.config }}
-    - 'This is an example file from SaltStack template-formula.'
+    - 'This is another example file from SaltStack template-formula.'
   assertion: assertTrue
 
 template-package-install-pkg-installed-test:
   module_and_function: pkg.version
   args:
-    - {{ template.package }}
+    - {{ template.pkg.name }}
   assertion: assertNotEmpty
 
 template-service-running-service-status:

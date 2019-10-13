@@ -3,19 +3,27 @@
 
 {#- Get the `tplroot` from `tpldir` #}
 {%- set tplroot = tpldir.split('/')[0] %}
+{#- do salt.log.error('tplroot\n' ~ tplroot|yaml(False)) #}
 {#- Start imports as #}
-{%- import_yaml tplroot ~ "/defaults.yaml" as default_settings %}
-{%- import_yaml tplroot ~ "/osarchmap.yaml" as osarchmap %}
-{%- import_yaml tplroot ~ "/osfamilymap.yaml" as osfamilymap %}
-{%- import_yaml tplroot ~ "/osmap.yaml" as osmap %}
-{%- import_yaml tplroot ~ "/osfingermap.yaml" as osfingermap %}
+{%- import_yaml "template" ~ "/defaults.yaml" as default_settings %}
+{%- import_yaml "template" ~ "/osarchmap.yaml" as osarchmap %}
+{%- import_yaml "template" ~ "/osfamilymap.yaml" as osfamilymap %} 
+{%- import_yaml "template" ~ "/osmap.yaml" as osmap %}
+{%- import_yaml "template" ~ "/osfingermap.yaml" as osfingermap %} 
+{#- do salt.log.error('default_settings\n' ~ default_settings|yaml(False)) #}
+{#- do salt.log.error('default_settings\n' ~ default_settings|yaml(False)) #}
+{#- do salt.log.error('osarchmap\n' ~ osarchmap|yaml(False)) #}
+{#- do salt.log.error('osfamilymap\n' ~ osfamilymap|yaml(False)) #}
+{#- do salt.log.error('osmap\n' ~ osmap|yaml(False)) #}
+{#- do salt.log.error('osfingermap\n' ~ osfingermap|yaml(False)) #}
 
 {#- Retrieve the config dict only once #}
-{%- set _config = salt['config.get'](tplroot, default={}) %}
+{%- set _config = salt['config.get']("template", default={}) %}
+{#- do salt.log.error('_config\n' ~ _config|yaml(False)) #}
 
 {%- set defaults = salt['grains.filter_by'](
       default_settings,
-      default=tplroot,
+      default="template",
       merge=salt['grains.filter_by'](
         osarchmap,
         grain='osarch',
@@ -38,6 +46,7 @@
       )
     )
 %}
+{#- do salt.log.error('defaults\n' ~ defaults|yaml(False)) #}
 
 {%- set config = salt['grains.filter_by'](
       {'defaults': defaults},
