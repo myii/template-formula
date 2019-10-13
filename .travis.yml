@@ -16,11 +16,10 @@ script:
   - bin/kitchen verify "${INSTANCE}"
   # yamllint disable-line rule:line-length
   - INSTANCE_PY=$(printf "${INSTANCE}" | tail -c 1)
-  - SALT_PATH=$(python${INSTANCE_PY} -c "import salt as _; print(_.__path__[0])")
   - bin/kitchen exec "${INSTANCE}" -c
       "sudo sed -i -e 's:return out_list:__context__['\''retcode'\''] =
-      failed + skipped + missing_tests\n    &:'
-      ${SALT_PATH}/modules/saltcheck.py"
+      (1 if (failed + skipped + missing_tests) else 0)\n    &:'
+      $(python${INSTANCE_PY} -c 'import salt as _; print(_.__path__[0])')/modules/saltcheck.py"
   - bin/kitchen exec "${INSTANCE}" -c
       "sudo salt-call
       --config-dir=/tmp/kitchen/etc/salt saltcheck.run_highstate_tests"
