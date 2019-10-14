@@ -14,16 +14,16 @@ cache: bundler
 ## Script to run for the test stage
 script:
   - bin/kitchen verify "${INSTANCE}"
-  - DEVELOP_INSTANCE=$(echo "${INSTANCE}" | grep \\-develop-)
+  # - DEVELOP_INSTANCE=$(echo "${INSTANCE}" | grep \\-develop-)
   # yamllint disable rule:line-length
-  - if [ ! -z ${DEVELOP_INSTANCE} ]; then
+  - if [ ! -z $(echo "${INSTANCE}" | grep \\-develop-) ]; then
       bin/kitchen exec "${INSTANCE}" -c
         "sudo sed -i -e 's:return out_list:__context__['\''retcode'\''] =
         (1 if (failed + skipped + missing_tests) else 0)\n    &:'
         \$(find /usr/lib/ -type d -name modules | grep packages/salt/modules)/saltcheck.py";
     fi
   # yamllint enable rule:line-length
-  - if [ ! -z ${DEVELOP_INSTANCE} ]; then
+  - if [ ! -z $(echo "${INSTANCE}" | grep \\-develop-) ]; then
       bin/kitchen exec "${INSTANCE}" -c
         "sudo salt-call
         --config-dir=/tmp/kitchen/etc/salt saltcheck.run_highstate_tests";
