@@ -14,15 +14,20 @@ cache: bundler
 ## Script to run for the test stage
 script:
   - bin/kitchen verify "${INSTANCE}"
+  - DEVELOP_INSTANCE=$(echo "${INSTANCE}" | grep \\-develop-)
   # yamllint disable rule:line-length
-  - bin/kitchen exec "${INSTANCE}" -c
-      "sudo sed -i -e 's:return out_list:__context__['\''retcode'\''] =
-      (1 if (failed + skipped + missing_tests) else 0)\n    &:'
-      \$(find /usr/lib/ -type d -name modules | grep packages/salt/modules)/saltcheck.py"
+  - if [ -n ${DEVELOP_INSTANCE} ]; then
+      bin/kitchen exec "${INSTANCE}" -c
+        "sudo sed -i -e 's:return out_list:__context__['\''retcode'\''] =
+        (1 if (failed + skipped + missing_tests) else 0)\n    &:'
+        \$(find /usr/lib/ -type d -name modules | grep packages/salt/modules)/saltcheck.py";
+    fi
   # yamllint enable rule:line-length
-  - bin/kitchen exec "${INSTANCE}" -c
-      "sudo salt-call
-      --config-dir=/tmp/kitchen/etc/salt saltcheck.run_highstate_tests"
+  - if [ -n ${DEVELOP_INSTANCE} ]; then
+      bin/kitchen exec "${INSTANCE}" -c
+        "sudo salt-call
+        --config-dir=/tmp/kitchen/etc/salt saltcheck.run_highstate_tests";
+    fi
 
 ## Stages and jobs matrix
 stages:
@@ -71,13 +76,13 @@ jobs:
     #       Ref: https://github.com/saltstack-formulas/template-formula/issues/118
     #       Ref: https://github.com/saltstack-formulas/template-formula/issues/121
     - env: INSTANCE=default-debian-10-develop-py3
-    - env: INSTANCE=default-ubuntu-1804-develop-py3
-    - env: INSTANCE=default-centos-7-develop-py3
-    - env: INSTANCE=default-fedora-30-develop-py3
-    - env: INSTANCE=default-opensuse-leap-15-develop-py3
-    - env: INSTANCE=default-amazonlinux-2-develop-py2
-    - env: INSTANCE=default-arch-base-latest-develop-py2
-    # - env: INSTANCE=default-debian-9-2019-2-py3
+    # - env: INSTANCE=default-ubuntu-1804-develop-py3
+    # - env: INSTANCE=default-centos-7-develop-py3
+    # - env: INSTANCE=default-fedora-30-develop-py3
+    # - env: INSTANCE=default-opensuse-leap-15-develop-py3
+    # - env: INSTANCE=default-amazonlinux-2-develop-py2
+    # - env: INSTANCE=default-arch-base-latest-develop-py2
+    - env: INSTANCE=default-debian-9-2019-2-py3
     # - env: INSTANCE=default-ubuntu-1804-2019-2-py3
     # - env: INSTANCE=default-centos-7-2019-2-py3
     # - env: INSTANCE=default-fedora-30-2019-2-py3
