@@ -14,7 +14,6 @@ cache: bundler
 ## Script to run for the test stage
 script:
   - bin/kitchen verify "${INSTANCE}"
-  # - DEVELOP_INSTANCE=$(echo "${INSTANCE}" | grep \\-develop-)
   # yamllint disable rule:line-length
   - if [ ! -z $(echo "${INSTANCE}" | grep \\-develop-) ]; then
       bin/kitchen exec "${INSTANCE}" -c
@@ -26,7 +25,9 @@ script:
   - if [ ! -z $(echo "${INSTANCE}" | grep \\-develop-) ]; then
       bin/kitchen exec "${INSTANCE}" -c
         "sudo salt-call
-        --config-dir=/tmp/kitchen/etc/salt saltcheck.run_highstate_tests";
+        --config-dir=/tmp/kitchen/etc/salt
+        saltcheck.run_state_tests
+        template check_all=True";
     fi
 
 ## Stages and jobs matrix
