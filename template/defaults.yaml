@@ -13,3 +13,10 @@ template:
   # Just here for testing
   added_in_defaults: defaults_value
   winner: defaults
+  octals:
+    test1: 0010
+    test2: 0400
+    test3: 0700
+    test4: 0600
+    test5: 0755
+    test6: 0644
