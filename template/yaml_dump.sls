@@ -5,15 +5,5 @@
 {%- set tplroot = tpldir.split('/')[0] %}
 {%- from tplroot ~ "/map.jinja" import template as map with context %}
 
-{%- set output_file = '/tmp/salt_yaml_dump.yaml' %}
-yaml-dump-{{ tplroot }}:
-  cmd.run:
-    - name: |
-        tee <<EOF {{ output_file }} >/dev/null
-        # $(date)
-        # yamllint disable rule:indentation
-        # {{ grains.osfinger }}-{{ grains.saltversion }}-py{{ grains.pythonversion[0] }}
-        ---
-        {{ grains.items()|sort|yaml(False)|trim|indent(8) }}
-        {{ map|yaml(False)|trim|indent(8) }}
-        EOF
+{%- do salt.log.debug('grains.items\n' ~ grains.items()|sort|yaml(False)|trim|indent(8)) %}
+{%- do salt.log.debug('map\n' ~ map|yaml(False)|trim|indent(8)) %}
