@@ -200,7 +200,7 @@ suites:
       state_top:
         base:
           '*':
-            - template
+            - template.yaml_dump
       pillars:
         top.sls:
           base:
@@ -220,7 +220,7 @@ suites:
       state_top:
         base:
           '*':
-            - template
+            - template.yaml_dump
       pillars:
         top.sls:
           base:
