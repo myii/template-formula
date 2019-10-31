@@ -1,3 +1,4 @@
+---
 stages:
   # - test
   # - commitlint
@@ -62,4 +63,3 @@ jobs:
         script:
           # Run `semantic-release`
           - npx semantic-release@15
-
