@@ -73,6 +73,9 @@ platforms:
   - name: ubuntu-1804-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:ubuntu-18.04
+      provision_command:
+        - curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
+        - sh bootstrap-salt.sh -XdPbfrq -x python3 git v3000.0rc2
   - name: centos-8-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:centos-8
