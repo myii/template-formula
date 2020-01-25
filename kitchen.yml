@@ -47,14 +47,12 @@ platforms:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
     transport:
       max_ssh_sessions: 1
-  # Use the `develop` image temporarily until the `master` image is available
-  # Not changing the name to minimise disruption across all of the formulas
-  - name: amazonlinux-2-master-py2
+  - name: amazonlinux-2-master-py3
     driver:
-      image: netmanagers/salt-develop-py2:amazonlinux-2
+      image: netmanagers/salt-master-py3:amazonlinux-2
       provision_command:
         - curl -o bootstrap-salt.sh -L https://bootstrap.saltstack.com
-        - sh bootstrap-salt.sh -XdPbfrq -x python2 git develop
+        - sh bootstrap-salt.sh -XdPbfrq -x python3 git master
   - name: arch-base-latest-master-py2
     driver:
       image: netmanagers/salt-master-py2:arch-base-latest
@@ -73,9 +71,15 @@ platforms:
   - name: ubuntu-1804-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:ubuntu-18.04
+  - name: ubuntu-1604-2019-2-py3
+    driver:
+      image: netmanagers/salt-2019.2-py3:ubuntu-16.04
   - name: centos-8-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:centos-8
+  - name: centos-7-2019-2-py3
+    driver:
+      image: netmanagers/salt-2019.2-py3:centos-7
   - name: fedora-31-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:fedora-31
@@ -87,12 +91,19 @@ platforms:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
     transport:
       max_ssh_sessions: 1
+  - name: amazonlinux-2-2019-2-py3
+    driver:
+      image: netmanagers/salt-2019.2-py3:amazonlinux-2
+  - name: ubuntu-1804-2019-2-py2
+    driver:
+      image: netmanagers/salt-2019.2-py2:ubuntu-18.04
   - name: centos-7-2019-2-py2
     driver:
       image: netmanagers/salt-2019.2-py2:centos-7
-  - name: amazonlinux-2-2019-2-py2
+  - name: amazonlinux-1-2019-2-py2
     driver:
-      image: netmanagers/salt-2019.2-py2:amazonlinux-2
+      image: netmanagers/salt-2019.2-py2:amazonlinux-1
+      run_command: /sbin/init
   - name: arch-base-latest-2019-2-py2
     driver:
       image: netmanagers/salt-2019.2-py2:arch-base-latest
@@ -105,12 +116,22 @@ platforms:
   - name: debian-9-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:debian-9
+  - name: debian-8-2018-3-py2
+    driver:
+      image: netmanagers/salt-2018.3-py2:debian-8
+  - name: ubuntu-1804-2018-3-py2
+    driver:
+      image: netmanagers/salt-2018.3-py2:ubuntu-18.04
   - name: ubuntu-1604-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:ubuntu-16.04
   - name: centos-7-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:centos-7
+  - name: centos-6-2018-3-py2
+    driver:
+      image: netmanagers/salt-2018.3-py2:centos-6
+      run_command: /sbin/init
   - name: opensuse-leap-151-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:opensuse-leap-15.1
@@ -119,42 +140,13 @@ platforms:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
     transport:
       max_ssh_sessions: 1
-  - name: amazonlinux-2-2018-3-py2
+  - name: amazonlinux-1-2018-3-py2
     driver:
-      image: netmanagers/salt-2018.3-py2:amazonlinux-2
+      image: netmanagers/salt-2018.3-py2:amazonlinux-1
+      run_command: /sbin/init
   - name: arch-base-latest-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:arch-base-latest
-      run_command: /usr/lib/systemd/systemd
-
-  ## SALT `2017.7`
-  - name: debian-8-2017-7-py2
-    driver:
-      image: netmanagers/salt-2017.7-py2:debian-8
-  - name: ubuntu-1604-2017-7-py2
-    driver:
-      image: netmanagers/salt-2017.7-py2:ubuntu-16.04
-  - name: centos-6-2017-7-py2
-    driver:
-      image: netmanagers/salt-2017.7-py2:centos-6
-      run_command: /sbin/init
-  - name: fedora-30-2017-7-py2
-    driver:
-      image: netmanagers/salt-2017.7-py2:fedora-30
-  - name: opensuse-leap-151-2017-7-py2
-    driver:
-      image: netmanagers/salt-2017.7-py2:opensuse-leap-15.1
-      run_command: /usr/lib/systemd/systemd
-    # Workaround to avoid intermittent failures on `opensuse-leap-15.1`:
-    # => SCP did not finish successfully (255):  (Net::SCP::Error)
-    transport:
-      max_ssh_sessions: 1
-  - name: amazonlinux-2-2017-7-py2
-    driver:
-      image: netmanagers/salt-2017.7-py2:amazonlinux-2
-  - name: arch-base-latest-2017-7-py2
-    driver:
-      image: netmanagers/salt-2017.7-py2:arch-base-latest
       run_command: /usr/lib/systemd/systemd
 
 provisioner:
@@ -178,7 +170,9 @@ verifier:
 suites:
   - name: default
     excludes:
-      - centos-6-2017-7-py2
+      - amazonlinux-1-2019-2-py2
+      - centos-6-2018-3-py2
+      - amazonlinux-1-2018-3-py2
     provisioner:
       state_top:
         base:
@@ -198,7 +192,9 @@ suites:
         - path: test/integration/default
   - name: centos6
     includes:
-      - centos-6-2017-7-py2
+      - amazonlinux-1-2019-2-py2
+      - centos-6-2018-3-py2
+      - amazonlinux-1-2018-3-py2
     provisioner:
       state_top:
         base:
