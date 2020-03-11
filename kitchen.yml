@@ -26,7 +26,7 @@ platforms:
       image: netmanagers/salt-master-py3:fedora-31
   - name: opensuse-leap-151-master-py3
     driver:
-      image: netmanagers/salt-master-py3:opensuse-leap-15.1
+      image: myii/salt-master-py3:opensuse-leap-15.1
       run_command: /usr/lib/systemd/systemd
     # Workaround to avoid intermittent failures on `opensuse-leap-15.1`:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
@@ -58,7 +58,7 @@ platforms:
       image: netmanagers/salt-2019.2-py3:fedora-31
   - name: opensuse-leap-151-2019-2-py3
     driver:
-      image: netmanagers/salt-2019.2-py3:opensuse-leap-15.1
+      image: myii/salt-2019.2-py3:opensuse-leap-15.1
       run_command: /usr/lib/systemd/systemd
     # Workaround to avoid intermittent failures on `opensuse-leap-15.1`:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
@@ -90,7 +90,7 @@ platforms:
       image: netmanagers/salt-2018.3-py2:centos-7
   - name: opensuse-leap-151-2018-3-py2
     driver:
-      image: netmanagers/salt-2018.3-py2:opensuse-leap-15.1
+      image: myii/salt-2018.3-py2:opensuse-leap-15.1
       run_command: /usr/lib/systemd/systemd
     # Workaround to avoid intermittent failures on `opensuse-leap-15.1`:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
@@ -121,7 +121,7 @@ platforms:
       image: netmanagers/salt-2017.7-py2:fedora-30
   - name: opensuse-leap-151-2017-7-py2
     driver:
-      image: netmanagers/salt-2017.7-py2:opensuse-leap-15.1
+      image: myii/salt-2017.7-py2:opensuse-leap-15.1
       run_command: /usr/lib/systemd/systemd
     # Workaround to avoid intermittent failures on `opensuse-leap-15.1`:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
