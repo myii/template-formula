@@ -17,7 +17,7 @@ services:
 
 ## Script to run for the test stage
 script:
-  - bin/kitchen verify "${INSTANCE}"
+  - bin/kitchen converge "${INSTANCE}"
 
 ## Stages and jobs matrix
 stages:

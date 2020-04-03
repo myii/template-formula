@@ -15,9 +15,11 @@ platforms:
   - name: debian-10-master-py3
     driver:
       image: netmanagers/salt-master-py3:debian-10
+      provision_command: apt-get -y install vim-tiny
   - name: ubuntu-1804-master-py3
     driver:
       image: netmanagers/salt-master-py3:ubuntu-18.04
+      provision_command: apt-get -y install vim-tiny
   - name: centos-8-master-py3
     driver:
       image: netmanagers/salt-master-py3:centos-8
@@ -27,6 +29,7 @@ platforms:
   - name: opensuse-leap-151-master-py3
     driver:
       image: netmanagers/salt-master-py3:opensuse-leap-15.1
+      provision_command: zypper install -y vim
       run_command: /usr/lib/systemd/systemd
     # Workaround to avoid intermittent failures on `opensuse-leap-15.1`:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
@@ -38,15 +41,18 @@ platforms:
   - name: arch-base-latest-master-py2
     driver:
       image: netmanagers/salt-master-py2:arch-base-latest
+      provision_command: pacman --noconfirm -Sy which vi
       run_command: /usr/lib/systemd/systemd
 
   ## SALT `3000.1`
   - name: debian-10-3000-1-py3
     driver:
       image: netmanagers/salt-3000.1-py3:debian-10
+      provision_command: apt-get -y install vim-tiny
   - name: ubuntu-1804-3000-1-py3
     driver:
       image: netmanagers/salt-3000.1-py3:ubuntu-18.04
+      provision_command: apt-get -y install vim-tiny
   - name: centos-8-3000-1-py3
     driver:
       image: netmanagers/salt-3000.1-py3:centos-8
@@ -56,6 +62,7 @@ platforms:
   - name: opensuse-leap-151-3000-1-py3
     driver:
       image: netmanagers/salt-3000.1-py3:opensuse-leap-15.1
+      provision_command: zypper install -y vim
       run_command: /usr/lib/systemd/systemd
     # Workaround to avoid intermittent failures on `opensuse-leap-15.1`:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
@@ -67,21 +74,26 @@ platforms:
   - name: arch-base-latest-3000-1-py2
     driver:
       image: netmanagers/salt-3000.1-py2:arch-base-latest
+      provision_command: pacman --noconfirm -Sy which vi
       run_command: /usr/lib/systemd/systemd
 
   ## SALT `2019.2`
   - name: debian-10-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:debian-10
+      provision_command: apt-get -y install vim-tiny
   - name: debian-9-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:debian-9
+      provision_command: apt-get -y install vim-tiny
   - name: ubuntu-1804-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:ubuntu-18.04
+      provision_command: apt-get -y install vim-tiny
   - name: ubuntu-1604-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:ubuntu-16.04
+      provision_command: apt-get -y install vim-tiny
   - name: centos-8-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:centos-8
@@ -94,6 +106,7 @@ platforms:
   - name: opensuse-leap-151-2019-2-py3
     driver:
       image: netmanagers/salt-2019.2-py3:opensuse-leap-15.1
+      provision_command: zypper install -y vim
       run_command: /usr/lib/systemd/systemd
     # Workaround to avoid intermittent failures on `opensuse-leap-15.1`:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
@@ -105,6 +118,7 @@ platforms:
   - name: ubuntu-1804-2019-2-py2
     driver:
       image: netmanagers/salt-2019.2-py2:ubuntu-18.04
+      provision_command: apt-get -y install vim-tiny
   - name: amazonlinux-1-2019-2-py2
     driver:
       image: netmanagers/salt-2019.2-py2:amazonlinux-1
@@ -112,6 +126,7 @@ platforms:
   - name: arch-base-latest-2019-2-py2
     driver:
       image: netmanagers/salt-2019.2-py2:arch-base-latest
+      provision_command: pacman --noconfirm -Sy which vi
       run_command: /usr/lib/systemd/systemd
 
   ## SALT `2018.3`
@@ -124,15 +139,19 @@ platforms:
   - name: debian-9-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:debian-9
+      provision_command: apt-get -y install vim-tiny
   - name: debian-8-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:debian-8
+      provision_command: apt-get -y install vim-tiny
   - name: ubuntu-1804-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:ubuntu-18.04
+      provision_command: apt-get -y install vim-tiny
   - name: ubuntu-1604-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:ubuntu-16.04
+      provision_command: apt-get -y install vim-tiny
   - name: centos-6-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:centos-6
@@ -140,6 +159,7 @@ platforms:
   - name: opensuse-leap-151-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:opensuse-leap-15.1
+      provision_command: zypper install -y vim
       run_command: /usr/lib/systemd/systemd
     # Workaround to avoid intermittent failures on `opensuse-leap-15.1`:
     # => SCP did not finish successfully (255):  (Net::SCP::Error)
@@ -152,6 +172,7 @@ platforms:
   - name: arch-base-latest-2018-3-py2
     driver:
       image: netmanagers/salt-2018.3-py2:arch-base-latest
+      provision_command: pacman --noconfirm -Sy which vi
       run_command: /usr/lib/systemd/systemd
 
 provisioner:
@@ -180,16 +201,16 @@ suites:
       state_top:
         base:
           '*':
-            - TEMPLATE
-      pillars:
-        top.sls:
-          base:
-            '*':
-              - TEMPLATE
-              - define_roles
-      pillars_from_files:
-        TEMPLATE.sls: pillar.example
-        define_roles.sls: test/salt/pillar/define_roles.sls
+            - TEMPLATE.test_across_unique_platforms
+    #   pillars:
+    #     top.sls:
+    #       base:
+    #         '*':
+    #           - TEMPLATE
+    #           - define_roles
+    #   pillars_from_files:
+    #     TEMPLATE.sls: pillar.example
+    #     define_roles.sls: test/salt/pillar/define_roles.sls
     verifier:
       inspec_tests:
         - path: test/integration/default
@@ -200,16 +221,16 @@ suites:
       state_top:
         base:
           '*':
-            - TEMPLATE
-      pillars:
-        top.sls:
-          base:
-            '*':
-              - TEMPLATE
-              - define_roles
-      pillars_from_files:
-        TEMPLATE.sls: test/salt/pillar/centos6.sls
-        define_roles.sls: test/salt/pillar/define_roles.sls
+            - TEMPLATE.test_across_unique_platforms
+    #   pillars:
+    #     top.sls:
+    #       base:
+    #         '*':
+    #           - TEMPLATE
+    #           - define_roles
+    #   pillars_from_files:
+    #     TEMPLATE.sls: test/salt/pillar/centos6.sls
+    #     define_roles.sls: test/salt/pillar/define_roles.sls
     verifier:
       inspec_tests:
         - path: test/integration/default
