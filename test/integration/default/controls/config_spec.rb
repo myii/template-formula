@@ -1,5 +1,8 @@
 # frozen_string_literal: true
 
+# Prepare platform "finger"
+platform_finger = "#{platform[:name]}-#{platform[:release].split('.')[0]}"
+
 control 'TEMPLATE configuration' do
   title 'should match desired lines'
 
@@ -32,5 +35,6 @@ control 'TEMPLATE configuration' do
     its('content') { should include '"arch": "amd64"' }
     its('content') { should include '"winner": "pillar"}' }
     its('content') { should include 'winner of the merge: pillar' }
+    its('content') { should include platform_finger }
   end
 end
