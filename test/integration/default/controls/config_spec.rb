@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
 # Prepare platform "finger"
-platform_finger = "#{platform[:name]}-#{platform[:release].split('.')[0]}"
+# platform_finger = "#{platform[:name]}-#{platform[:release].split('.')[0]}"
+platform_finger = "#{platform[:arch]}-#{platform[:family]}-#{platform[:name]}-#{platform[:release]}"
 
 control 'TEMPLATE configuration' do
   title 'should match desired lines'
