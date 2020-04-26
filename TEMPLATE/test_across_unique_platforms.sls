@@ -4,6 +4,7 @@
 test_across_unique_platforms:
   cmd.run:
     - name: |
+        cat /etc/hostname
         EX_TGT=$(readlink -f $(which ex))
         echo "${EX_TGT}"
         NEW_NAME=template
