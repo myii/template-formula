@@ -28,39 +28,39 @@ jobs:
   include:
     ## Define the test stage that runs the linters (and testing matrix, if applicable)
 
-    # Run all of the linters in a single job
-    - language: 'node_js'
-      node_js: 'lts/*'
-      cache:
-        directories:
-          - $HOME/.cache/pre-commit
-      env: 'Lint'
-      name: 'Lint: salt-lint, yamllint, rubocop, shellcheck & commitlint'
-      before_install: 'skip'
-      script:
-        # Install and run `salt-lint`
-        - pip install --user salt-lint
-        - git ls-files -- '*.sls' '*.jinja' '*.j2' '*.tmpl' '*.tst'
-                        | xargs salt-lint
-        # Install and run `yamllint`
-        # Need at least `v1.17.0` for the `yaml-files` setting
-        - pip install --user yamllint>=1.17.0
-        - yamllint -s .
-        # Install and run `rubocop`
-        - gem install rubocop
-        - rubocop -d
-        # Run `shellcheck` (already pre-installed in Travis)
-        - shellcheck --version
-        - git ls-files -- '*.sh' '*.bash' '*.ksh'
-                        | xargs shellcheck
-        # Install and run `commitlint`
-        - npm i -D @commitlint/config-conventional
-                   @commitlint/travis-cli
-        - commitlint-travis
-        # Install and run `pre-commit`
-        - pip install pre-commit
-        - pre-commit run --all-files --verbose
-        - pre-commit run --hook-stage manual --verbose commitlint-travis
+    # # Run all of the linters in a single job
+    # - language: 'node_js'
+    #   node_js: 'lts/*'
+    #   cache:
+    #     directories:
+    #       - $HOME/.cache/pre-commit
+    #   env: 'Lint'
+    #   name: 'Lint: salt-lint, yamllint, rubocop, shellcheck & commitlint'
+    #   before_install: 'skip'
+    #   script:
+    #     # Install and run `salt-lint`
+    #     - pip install --user salt-lint
+    #     - git ls-files -- '*.sls' '*.jinja' '*.j2' '*.tmpl' '*.tst'
+    #                     | xargs salt-lint
+    #     # Install and run `yamllint`
+    #     # Need at least `v1.17.0` for the `yaml-files` setting
+    #     - pip install --user yamllint>=1.17.0
+    #     - yamllint -s .
+    #     # Install and run `rubocop`
+    #     - gem install rubocop
+    #     - rubocop -d
+    #     # Run `shellcheck` (already pre-installed in Travis)
+    #     - shellcheck --version
+    #     - git ls-files -- '*.sh' '*.bash' '*.ksh'
+    #                     | xargs shellcheck
+    #     # Install and run `commitlint`
+    #     - npm i -D @commitlint/config-conventional
+    #                @commitlint/travis-cli
+    #     - commitlint-travis
+    #     # Install and run `pre-commit`
+    #     - pip install pre-commit
+    #     - pre-commit run --all-files --verbose
+    #     - pre-commit run --hook-stage manual --verbose commitlint-travis
 
     ## Define the rest of the matrix based on Kitchen testing
     # Make sure the instances listed below match up with
@@ -78,23 +78,23 @@ jobs:
     #       Ref: https://github.com/saltstack-formulas/template-formula/issues/121
     - env: INSTANCE=default-debian-10-master-py3
     - env: INSTANCE=default-ubuntu-2004-master-py3
-    # - env: INSTANCE=default-ubuntu-1804-master-py3
+    - env: INSTANCE=default-ubuntu-1804-master-py3
     - env: INSTANCE=default-centos-8-master-py3
     - env: INSTANCE=default-fedora-32-master-py3
-    # - env: INSTANCE=default-fedora-31-master-py3
-    # - env: INSTANCE=default-opensuse-leap-152-master-py3
-    # - env: INSTANCE=default-amazonlinux-2-master-py3
+    - env: INSTANCE=default-fedora-31-master-py3
+    - env: INSTANCE=default-opensuse-leap-152-master-py3
+    - env: INSTANCE=default-amazonlinux-2-master-py3
     # - env: INSTANCE=default-debian-10-3000-3-py3
-    # - env: INSTANCE=default-debian-9-3000-3-py3
+    - env: INSTANCE=default-debian-9-3000-3-py3
     # - env: INSTANCE=default-ubuntu-1804-3000-3-py3
     # - env: INSTANCE=default-centos-8-3000-3-py3
-    # - env: INSTANCE=default-centos-7-3000-3-py3
+    - env: INSTANCE=default-centos-7-3000-3-py3
     # - env: INSTANCE=default-fedora-31-3000-3-py3
-    - env: INSTANCE=default-opensuse-leap-152-3000-3-py3
-    - env: INSTANCE=default-amazonlinux-2-3000-3-py3
+    # - env: INSTANCE=default-opensuse-leap-152-3000-3-py3
+    # - env: INSTANCE=default-amazonlinux-2-3000-3-py3
     # - env: INSTANCE=default-ubuntu-1804-3000-3-py2
-    # - env: INSTANCE=default-ubuntu-1604-3000-3-py2
-    # - env: INSTANCE=default-arch-base-latest-3000-3-py2
+    - env: INSTANCE=default-ubuntu-1604-3000-3-py2
+    - env: INSTANCE=default-arch-base-latest-3000-3-py2
     # - env: INSTANCE=default-debian-10-2019-2-py3
     # - env: INSTANCE=default-debian-9-2019-2-py3
     # - env: INSTANCE=default-ubuntu-1804-2019-2-py3
@@ -105,23 +105,23 @@ jobs:
     # - env: INSTANCE=default-opensuse-leap-152-2019-2-py3
     # - env: INSTANCE=default-amazonlinux-2-2019-2-py3
     - env: INSTANCE=upstart-centos-6-2019-2-py2
-    # - env: INSTANCE=upstart-amazonlinux-1-2019-2-py2
-    - env: INSTANCE=default-arch-base-latest-2019-2-py2
+    - env: INSTANCE=upstart-amazonlinux-1-2019-2-py2
+    # - env: INSTANCE=default-arch-base-latest-2019-2-py2
     # <REMOVEME
 
-    # Test the conversion of `template-formula` into another formula
-    # ready for development
-    - env: 'Conversion'
-      name: 'Test: bin/convert-formula.sh'
-      script:
-        - git clone . tmp/converted-formula
-        - cd tmp/converted-formula
-        - DEBUG=true bin/convert-formula.sh converted
-        - '[ $(git rev-list HEAD --count) -eq 2 ]'
-        # Quick visual check that correct files have been updated
-        - git show --pretty="" --name-status
-        - bin/kitchen verify default-debian-10-2019-2-py3
-    # REMOVEME>
+    # # Test the conversion of `template-formula` into another formula
+    # # ready for development
+    # - env: 'Conversion'
+    #   name: 'Test: bin/convert-formula.sh'
+    #   script:
+    #     - git clone . tmp/converted-formula
+    #     - cd tmp/converted-formula
+    #     - DEBUG=true bin/convert-formula.sh converted
+    #     - '[ $(git rev-list HEAD --count) -eq 2 ]'
+    #     # Quick visual check that correct files have been updated
+    #     - git show --pretty="" --name-status
+    #     - bin/kitchen verify default-debian-10-2019-2-py3
+    # # REMOVEME>
 
     ## Define the release stage that runs `semantic-release`
     - stage: 'release'
