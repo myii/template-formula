@@ -28,39 +28,64 @@ jobs:
   include:
     ## Define the test stage that runs the linters (and testing matrix, if applicable)
 
-    # Run all of the linters in a single job
-    - language: 'node_js'
-      node_js: 'lts/*'
+    
+    
+    
+    
+    
+    
+    
+     #}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+     #}
+     #}
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    # Run `pre-commit` linters in a single job
+    - language: 'python'
+      env: 'Lint_pre-commit'
+      name: 'Lint: pre-commit'
+      before_install: 'skip'
       cache:
         directories:
           - $HOME/.cache/pre-commit
-      env: 'Lint'
-      name: 'Lint: salt-lint, yamllint, rubocop, shellcheck & commitlint'
-      before_install: 'skip'
       script:
-        # Install and run `salt-lint`
-        - pip install --user salt-lint
-        - git ls-files -- '*.sls' '*.jinja' '*.j2' '*.tmpl' '*.tst'
-                        | xargs salt-lint
-        # Install and run `yamllint`
-        # Need at least `v1.17.0` for the `yaml-files` setting
-        - pip install --user yamllint>=1.17.0
-        - yamllint -s .
-        # Install and run `rubocop`
-        - gem install rubocop
-        - rubocop -d
-        # Run `shellcheck` (already pre-installed in Travis)
-        - shellcheck --version
-        - git ls-files -- '*.sh' '*.bash' '*.ksh'
-                        | xargs shellcheck
-        # Install and run `commitlint`
-        - npm i -D @commitlint/config-conventional
-                   @commitlint/travis-cli
-        - commitlint-travis
         # Install and run `pre-commit`
-        - pip install pre-commit
-        - pre-commit run --all-files --verbose
-        - pre-commit run --hook-stage manual --verbose commitlint-travis
+        - pip install pre-commit==2.7.1
+        - pre-commit run --all-files --color always --verbose
+        # - pre-commit run --color always --hook-stage manual --verbose commitlint-travis
 
     ## Define the rest of the matrix based on Kitchen testing
     # Make sure the instances listed below match up with
@@ -76,23 +101,23 @@ jobs:
     #       to allow for comprehensive local testing
     #       Ref: https://github.com/saltstack-formulas/template-formula/issues/118
     #       Ref: https://github.com/saltstack-formulas/template-formula/issues/121
-    - env: INSTANCE=default-debian-10-tiamat-py3
+    # - env: INSTANCE=default-debian-10-tiamat-py3
     # - env: INSTANCE=default-debian-9-tiamat-py3
-    - env: INSTANCE=default-ubuntu-2004-tiamat-py3
+    # - env: INSTANCE=default-ubuntu-2004-tiamat-py3
     # - env: INSTANCE=default-ubuntu-1804-tiamat-py3
     # - env: INSTANCE=default-ubuntu-1604-tiamat-py3
-    - env: INSTANCE=default-centos-8-tiamat-py3
+    # - env: INSTANCE=default-centos-8-tiamat-py3
     # - env: INSTANCE=default-centos-7-tiamat-py3
-    - env: INSTANCE=default-amazonlinux-2-tiamat-py3
-    - env: INSTANCE=default-oraclelinux-8-tiamat-py3
+    # - env: INSTANCE=default-amazonlinux-2-tiamat-py3
+    # - env: INSTANCE=default-oraclelinux-8-tiamat-py3
     # - env: INSTANCE=default-oraclelinux-7-tiamat-py3
     # - env: INSTANCE=default-debian-10-master-py3
     # - env: INSTANCE=default-ubuntu-2004-master-py3
     # - env: INSTANCE=default-ubuntu-1804-master-py3
     # - env: INSTANCE=default-centos-8-master-py3
-    - env: INSTANCE=default-fedora-32-master-py3
+    # - env: INSTANCE=default-fedora-32-master-py3
     # - env: INSTANCE=default-fedora-31-master-py3
-    - env: INSTANCE=default-opensuse-leap-152-master-py3
+    # - env: INSTANCE=default-opensuse-leap-152-master-py3
     # - env: INSTANCE=default-amazonlinux-2-master-py3
     # - env: INSTANCE=default-debian-10-3001-py3
     # - env: INSTANCE=default-debian-9-3001-py3
@@ -116,9 +141,9 @@ jobs:
     # - env: INSTANCE=default-amazonlinux-2-3000-3-py3
     # - env: INSTANCE=default-ubuntu-1804-3000-3-py2
     # - env: INSTANCE=default-ubuntu-1604-3000-3-py2
-    - env: INSTANCE=default-arch-base-latest-3000-3-py2
-    - env: INSTANCE=upstart-centos-6-2019-2-py2
-    - env: INSTANCE=upstart-amazonlinux-1-2019-2-py2
+    # - env: INSTANCE=default-arch-base-latest-3000-3-py2
+    # - env: INSTANCE=upstart-centos-6-2019-2-py2
+    # - env: INSTANCE=upstart-amazonlinux-1-2019-2-py2
     # <REMOVEME
 
     # Test the conversion of `template-formula` into another formula
@@ -165,12 +190,14 @@ jobs:
 # Notification options: `always`, `never` or `change`
 notifications:
   webhooks:
-    if: 'repo = saltstack-formulas/template-formula'
+    # yamllint disable rule:line-length
+    if: 'repo = saltstack-formulas/template-formula OR repo = myii/template-formula'
     urls:
-      - https://saltstack-formulas.zulipchat.com/api/v1/external/travis?api_key=HsIq3o5QmLxdnVCKF9is0FUIpkpAY79P&stream=CI&topic=saltstack-formulas%2Ftemplate-formula&ignore_pull_requests=true
+      - https://saltstack-formulas.zulipchat.com/api/v1/external/travis?api_key=HsIq3o5QmLxdnVCKF9is0FUIpkpAY79P&stream=CI&topic=pre-commit%2F2020-W40_02&ignore_pull_requests=true
+    # yamllint enable rule:line-length
     on_success: always  # default: always
     on_failure: always  # default: always
-    on_start: always    # default: never
+    on_start: never     # default: never
     on_cancel: always   # default: always
     on_error: always    # default: always
 # REMOVEME>

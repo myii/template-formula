@@ -8,6 +8,9 @@ driver:
   privileged: true
   run_command: /lib/systemd/systemd
 
+# Using the commit title as a comment to guarantee change for new commit/push:
+# ci: add pre-commit to repo (2020-W40_02)
+
 # Make sure the platforms listed below match up with
 # the `env.matrix` instances defined in `.travis.yml`
 platforms:
