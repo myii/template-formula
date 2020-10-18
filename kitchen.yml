@@ -198,6 +198,8 @@ provisioner:
   salt_copy_filter:
     - .kitchen
     - .git
+  salt_minion_extra_config:
+    enable_slsvars_fixes: true
 
 verifier:
   # https://www.inspec.io/
