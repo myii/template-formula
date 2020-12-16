@@ -8,6 +8,9 @@ driver:
   privileged: true
   run_command: /lib/systemd/systemd
 
+# Using the commit title as a comment to guarantee change for new commit/push:
+# feat(gitlab-ci): use GitLab CI as Travis CI replacement (2020-W50_02)
+
 # Make sure the platforms listed below match up with
 # the `env.matrix` instances defined in `.travis.yml`
 platforms:
