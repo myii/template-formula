@@ -87,6 +87,7 @@ convert_formula() {
   sedi '/<REMOVEME/,/REMOVEME>/c \
 None
 ' docs/README.rst
+  cat .gitlab-ci.yml
 
   # Produce a commitlint-safe commit message (line length)
   if [ "${#NEW_NAME}" -gt 25 ]; then
