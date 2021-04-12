@@ -13,7 +13,8 @@
 ---
 values:
   pkg:
-    name: TEMPLATE-fedora
+    name: 11
+    # TEMPLATE-fedora
   service:
     name: service-fedora
 ...
