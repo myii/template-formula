@@ -15,7 +15,9 @@
   stage_test: &stage_test 'test'
   # `image`
   image_commitlint: &image_commitlint 'myii/ssf-commitlint:11'
-  image_cuelang: &image_cuelang 'myii/ssf-cue:0.3.2'
+  image_cuelang: &image_cuelang
+    name: 'myii/ssf-cue:0.3.2'
+    entrypoint: ['/bin/ash', '-c']
   image_dindruby: &image_dindruby 'myii/ssf-dind-ruby:2.7.1-r3'
   image_dindrubybionic: &image_dindrubybionic 'myii/ssf-dind-ruby-bionic:1_2.5.1'
   image_precommit: &image_precommit
@@ -110,7 +112,7 @@ cue:
   variables:
     RULES: 'TEMPLATE/parameters/schema/yaml.cue'
   script:
-    - 'vet -v $(find . -name "*.yaml") ${RULES} --schema "#Values"'
+    - 'cue vet -v $(find . -name "*.yaml") ${RULES} --schema "#Values"'
 
 ###############################################################################
 # Define `test` template
