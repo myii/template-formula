@@ -110,7 +110,7 @@ cue:
   variables:
     RULES: 'TEMPLATE/parameters/schema/yaml.cue'
   script:
-    - 'vet $(find . -name "*.yaml") ${RULES} --schema "#Values"'
+    - 'vet -v $(find . -name "*.yaml") ${RULES} --schema "#Values"'
 
 ###############################################################################
 # Define `test` template
