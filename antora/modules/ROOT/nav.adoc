@@ -1,9 +1,34 @@
-.General
-* xref:main::README.adoc[Main docs]
-* xref:main::CONTRIBUTING.adoc[How to contribute]
-* xref:main::TOFS_pattern.adoc[TOFS: A pattern for using SaltStack]
+'''
 
-.Formula
+.Repo documentation
+
 * xref:README.adoc[README]
 ** xref:README.adoc#states[Available states]
+
 * xref:AUTHORS.adoc[Contributors]
+
+* xref:CHANGELOG_rst.adoc[Changelog]
+
+'''
+
+.Tutorials
+
+* xref:README.adoc[...]
+
+'''
+
+.Guides
+
+* xref:README.adoc[How to: Use this template]
+
+'''
+
+.Explanations
+
+* xref:README.adoc[...]
+
+'''
+
+.References
+
+* xref:README.adoc[...]

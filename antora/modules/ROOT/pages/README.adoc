@@ -8,10 +8,6 @@ A SaltStack formula that is empty.
 It has dummy content to help with a quick start on a new formula and it serves
 as a style guide.
 
-// This `toc` will not show up in GitHub directly, only in the GitHub pages.
-// Antora applies all of the `toc` settings when rendering the HTML.
-toc::[]
-
 [abstract]
 == General notes
 
