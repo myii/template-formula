@@ -1,6 +1,6 @@
 name: template-formula
 title: template-formula
-version: '1.3.10'
+version: '1.3.11'
 start_page: README.adoc
 nav:
   - modules/ROOT/nav.adoc
