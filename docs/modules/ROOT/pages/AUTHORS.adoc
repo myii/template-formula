@@ -1,93 +1,114 @@
-== Authors
+= Authors
 
 This list is sorted by the number of commits per contributor in
 _descending_ order.
 
-[cols=",,",options="header",]
-|=======================================================================
-|Avatar |Contributor |Contributions
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars2.githubusercontent.com/u/10231489?v=4' width='36'
-height='36' alt='@myii'># |https://github.com/myii[@myii] |105
+.List of contributors
+[format="psv", separator="|", options="header", cols="^.<30a,<.<40a,^.<40d", width="100"]
+|===
+^.^|Avatar
+<.^|Contributor
+^.^|Contributions
 
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars0.githubusercontent.com/u/1800660?v=4' width='36'
-height='36' alt='@aboe76'># |https://github.com/aboe76[@aboe76] |18
+|image::https://avatars.githubusercontent.com/u/10231489?v=4[@myii,36,36]
+|https://github.com/myii[@myii]
+|319 
 
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars2.githubusercontent.com/u/242396?v=4' width='36'
-height='36' alt='@javierbertoli'>#
-|https://github.com/javierbertoli[@javierbertoli] |8
+|image::https://avatars.githubusercontent.com/u/1233212?v=4[@baby-gnu,36,36]
+|https://github.com/baby-gnu[@baby-gnu]
+|37
 
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars2.githubusercontent.com/u/1396878?v=4' width='36'
-height='36' alt='@gravyboat'># |https://github.com/gravyboat[@gravyboat]
+|image::https://avatars.githubusercontent.com/u/4195158?v=4[@dafyddj,36,36]
+|https://github.com/dafyddj[@dafyddj]
+|32 
+
+|image::https://avatars.githubusercontent.com/u/1800660?v=4[@aboe76,36,36]
+|https://github.com/aboe76[@aboe76]
+|27 
+
+|image::https://avatars.githubusercontent.com/u/242396?v=4[@javierbertoli,36,36]
+|https://github.com/javierbertoli[@javierbertoli]
+|18
+
+|image::https://avatars.githubusercontent.com/u/13322818?v=4[@noelmcloughlin,36,36]
+|https://github.com/noelmcloughlin[@noelmcloughlin]
+|15
+
+|image::https://avatars.githubusercontent.com/u/3433835?v=4[@n-rodriguez,36,36]
+|https://github.com/n-rodriguez[@n-rodriguez]
+|8
+
+|image::https://avatars.githubusercontent.com/u/52996?v=4[@daks,36,36]
+|https://github.com/daks[@daks]
+|8 
+
+|image::https://avatars.githubusercontent.com/u/1396878?v=4[@gravyboat,36,36]
+|https://github.com/gravyboat[@gravyboat]
 |6
 
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars3.githubusercontent.com/u/4542588?v=4' width='36'
-height='36' alt='@evvers'># |https://github.com/evvers[@evvers] |4
+|image::https://avatars.githubusercontent.com/u/1920805?v=4[@alxwr,36,36]
+|https://github.com/alxwr[@alxwr]
+|5 
 
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars0.githubusercontent.com/u/3374962?v=4' width='36'
-height='36' alt='@nmadhok'># |https://github.com/nmadhok[@nmadhok] |3
+|image::https://avatars.githubusercontent.com/u/4542588?v=4[@evvers,36,36]
+|https://github.com/evvers[@evvers]
+|4 
 
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars0.githubusercontent.com/u/1920805?v=4' width='36'
-height='36' alt='@alxwr'># |https://github.com/alxwr[@alxwr] |2
+|image::https://avatars.githubusercontent.com/u/3374962?v=4[@nmadhok,36,36]
+|https://github.com/nmadhok[@nmadhok]
+|3 
 
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars0.githubusercontent.com/u/16338056?v=4' width='36'
-height='36' alt='@vutny'># |https://github.com/vutny[@vutny] |2
+|image::https://avatars.githubusercontent.com/u/16338056?v=4[@vutny,36,36]
+|https://github.com/vutny[@vutny]
+|2 
 
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars3.githubusercontent.com/u/52996?v=4' width='36'
-height='36' alt='@daks'># |https://github.com/daks[@daks] |2
+|image::https://avatars.githubusercontent.com/u/29522418?v=4[@k-hamza,36,36]
+|https://github.com/k-hamza[@k-hamza]
+|2 
 
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars2.githubusercontent.com/u/29522418?v=4' width='36'
-height='36' alt='@k-hamza'># |https://github.com/k-hamza[@k-hamza] |2
+|image::https://avatars.githubusercontent.com/u/528061?v=4[@puneetk,36,36]
+|https://github.com/puneetk[@puneetk]
+|2 
 
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars1.githubusercontent.com/u/528061?v=4' width='36'
-height='36' alt='@puneetk'># |https://github.com/puneetk[@puneetk] |2
-
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars1.githubusercontent.com/u/3536289?v=4' width='36'
-height='36' alt='@andygabby'># |https://github.com/andygabby[@andygabby]
+|image::https://avatars.githubusercontent.com/u/3536289?v=4[@andygabby,36,36]
+|https://github.com/andygabby[@andygabby]
 |1
 
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars2.githubusercontent.com/u/1269218?v=4' width='36'
-height='36' alt='@Jokipii'># |https://github.com/Jokipii[@Jokipii] |1
+|image::https://avatars.githubusercontent.com/u/1269218?v=4[@Jokipii,36,36]
+|https://github.com/Jokipii[@Jokipii]
+|1 
 
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars2.githubusercontent.com/u/611471?v=4' width='36'
-height='36' alt='@duk3luk3'># |https://github.com/duk3luk3[@duk3luk3] |1
-
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars3.githubusercontent.com/u/3075069?v=4' width='36'
-height='36' alt='@marco-m'># |https://github.com/marco-m[@marco-m] |1
-
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars2.githubusercontent.com/u/91293?v=4' width='36'
-height='36' alt='@whiteinge'># |https://github.com/whiteinge[@whiteinge]
+|image::https://avatars.githubusercontent.com/u/5306980?v=4[@johnkeates,36,36]
+|https://github.com/johnkeates[@johnkeates]
 |1
 
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars0.githubusercontent.com/u/22272?v=4' width='36'
-height='36' alt='@sroegner'># |https://github.com/sroegner[@sroegner] |1
+|image::https://avatars.githubusercontent.com/u/611471?v=4[@duk3luk3,36,36]
+|https://github.com/duk3luk3[@duk3luk3]
+|1 
 
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars1.githubusercontent.com/u/117961?v=4' width='36'
-height='36' alt='@babilen5'># |https://github.com/babilen5[@babilen5] |1
+|image::https://avatars.githubusercontent.com/u/3075069?v=4[@marco-m,36,36]
+|https://github.com/marco-m[@marco-m]
+|1 
 
-|:raw-html-m2r:[.title-ref]#<img class='float-left rounded-1'
-src='https://avatars0.githubusercontent.com/u/2205993?v=4' width='36'
-height='36' alt='@GMAzrael'># |https://github.com/GMAzrael[@GMAzrael] |1
-|=======================================================================
+|image::https://avatars.githubusercontent.com/u/91293?v=4[@whiteinge,36,36]
+|https://github.com/whiteinge[@whiteinge]
+|1
+
+|image::https://avatars.githubusercontent.com/u/22272?v=4[@sroegner,36,36]
+|https://github.com/sroegner[@sroegner]
+|1 
+
+|image::https://avatars.githubusercontent.com/u/117961?v=4[@babilen5,36,36]
+|https://github.com/babilen5[@babilen5]
+|1 
+
+|image::https://avatars.githubusercontent.com/u/2205993?v=4[@GMAzrael,36,36]
+|https://github.com/GMAzrael[@GMAzrael]
+|1
+|===
 
 '''''
 
-Auto generated by https://github.com/myii/maintainer[myii/maintainer] on
-2019-03-06.
+Auto-generated by a https://github.com/myii/maintainer[forked version]
+of https://github.com/gaocegege/maintainer[gaocegege/maintainer] on
+2021-04-14.
