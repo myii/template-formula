@@ -1,36 +1,34 @@
-= Changelog
+== Changelog
 
-:sectnums!:
+=== https://github.com/myii/template-formula/compare/v1.3.0...v1.3.1[1.3.1] (2019-03-06)
 
-== link:++https://github.com/myii/template-formula/compare/v1.3.0...v1.3.1++[1.3.1] (2019-03-06)
-
-=== Documentation
+==== Documentation
 
 * *contributing:* start initial paragraph
 (https://github.com/myii/template-formula/commit/5687022[5687022])
 
-== link:++https://github.com/myii/template-formula/compare/v1.2.0...v1.3.0++[1.3.0] (2019-03-06)
+=== https://github.com/myii/template-formula/compare/v1.2.0...v1.3.0[1.3.0] (2019-03-06)
 
-=== Continuous Integration
+==== Continuous Integration
 
 * *travis:* leave only `release` stage for fast Antora testing
 (https://github.com/myii/template-formula/commit/661e1b3[661e1b3])
 
-=== Features
+==== Features
 
 * *antora:* introduce Antora-based documentation
 (https://github.com/myii/template-formula/commit/df706c2[df706c2])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v1.1.2...v1.2.0++[1.2.0] (2019-03-03)
+=== https://github.com/saltstack-formulas/template-formula/compare/v1.1.2...v1.2.0[1.2.0] (2019-03-03)
 
-=== Features
+==== Features
 
 * *m2r:* use `m2r` to convert automatic `.md` files to `.rst`
 (https://github.com/saltstack-formulas/template-formula/commit/b86ddf4[b86ddf4])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v1.1.1...v1.1.2++[1.1.2] (2019-03-03)
+=== https://github.com/saltstack-formulas/template-formula/compare/v1.1.1...v1.1.2[1.1.2] (2019-03-03)
 
-=== Documentation
+==== Documentation
 
 * *contributing:* add documentation contribution guidelines
 (https://github.com/saltstack-formulas/template-formula/commit/dff0ee8[dff0ee8])
@@ -41,14 +39,14 @@
 * *tofs:* use `literalinclude` of `macros.jinja` instead of code dupe
 (https://github.com/saltstack-formulas/template-formula/commit/3f0071b[3f0071b])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v1.1.0...v1.1.1++[1.1.1] (2019-03-01)
+=== https://github.com/saltstack-formulas/template-formula/compare/v1.1.0...v1.1.1[1.1.1] (2019-03-01)
 
-=== Continuous Integration
+==== Continuous Integration
 
 * *travis:* remove obsolete `markdown-toc` process
 (https://github.com/saltstack-formulas/template-formula/commit/97fbb60[97fbb60])
 
-=== Documentation
+==== Documentation
 
 * *contributing:* add TOC to match all other pages
 (https://github.com/saltstack-formulas/template-formula/commit/7b1a2a9[7b1a2a9])
@@ -59,26 +57,26 @@
 * *tofs:* use table to list authorship
 (https://github.com/saltstack-formulas/template-formula/commit/2f0e20f[2f0e20f])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v1.0.1...v1.1.0++[1.1.0] (2019-03-01)
+=== https://github.com/saltstack-formulas/template-formula/compare/v1.0.1...v1.1.0[1.1.0] (2019-03-01)
 
-=== Documentation
+==== Documentation
 
 * *rtd:* add basic `docs/conf.py` to allow additional customisation
 (https://github.com/saltstack-formulas/template-formula/commit/18d3924[18d3924])
 
-=== Features
+==== Features
 
 * *rtd:* provide custom CSS file for overriding in-use Sphinx theme
 (https://github.com/saltstack-formulas/template-formula/commit/24bd338[24bd338])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v1.0.0...v1.0.1++[1.0.1] (2019-03-01)
+=== https://github.com/saltstack-formulas/template-formula/compare/v1.0.0...v1.0.1[1.0.1] (2019-03-01)
 
-=== Continuous Integration
+==== Continuous Integration
 
 * *travis:* remove unavailable files from `markdown-toc` process
 (https://github.com/saltstack-formulas/template-formula/commit/3148f0d[3148f0d])
 
-=== Documentation
+==== Documentation
 
 * *contributing:* convert to `.rst` and move to `docs` subdir
 (https://github.com/saltstack-formulas/template-formula/commit/474f318[474f318])
@@ -93,9 +91,9 @@
 * *rtd:* use internal link targets at the top of each `.rst` file
 (https://github.com/saltstack-formulas/template-formula/commit/da09528[da09528])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.7.6...v1.0.0++[1.0.0] (2019-02-28)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.7.6...v1.0.0[1.0.0] (2019-02-28)
 
-=== Code Refactoring
+==== Code Refactoring
 
 * *components:* split components into separate subdirs
 (https://github.com/saltstack-formulas/template-formula/commit/d957055[d957055]),
@@ -122,7 +120,7 @@ https://github.com//github.com/saltstack-formulas/template-formula/pull/48/issue
 * *tplroot:* use `tplroot` instead of `topdir` to match `tpldata`
 (https://github.com/saltstack-formulas/template-formula/commit/b7356b0[b7356b0])
 
-=== Continuous Integration
+==== Continuous Integration
 
 * *kitchen:* specify `image` explicitly for each platform
 (https://github.com/saltstack-formulas/template-formula/commit/b25fbdc[b25fbdc])
@@ -132,7 +130,7 @@ closes
 https://github.com/saltstack-formulas/template-formula/issues/50[#50]
 https://github.com//github.com/saltstack/salt-pack/issues/657/issues/issuecomment-467932962[/github.com/saltstack/salt-pack/issues/657#issuecomment-467932962]
 
-=== Documentation
+==== Documentation
 
 * *components:* update for separation of `pkg`, `config` & `service`
 (https://github.com/saltstack-formulas/template-formula/commit/726fcab[726fcab])
@@ -141,7 +139,7 @@ https://github.com//github.com/saltstack/salt-pack/issues/657/issues/issuecommen
 * *readme:* fix typos
 (https://github.com/saltstack-formulas/template-formula/commit/007159a[007159a])
 
-=== Features
+==== Features
 
 * *pkg:* add `clean` states
 (https://github.com/saltstack-formulas/template-formula/commit/422c7ac[422c7ac])
@@ -152,12 +150,12 @@ https://github.com//github.com/saltstack/salt/blob/0c78d7dc894058988d171a28a11bd
 https://github.com//github.com/saltstack/salt/blob/0c78d7dc894058988d171a28a11bd4a9dbf60266/salt/utils/templates.py/issues/L145[/github.com/saltstack/salt/blob/0c78d7dc894058988d171a28a11bd4a9dbf60266/salt/utils/templates.py#L145]
 https://github.com//github.com/saltstack/salt/issues/10838/issues/issuecomment-391718086[/github.com/saltstack/salt/issues/10838#issuecomment-391718086]
 
-=== Reverts
+==== Reverts
 
 * *kitchen+travis:* disable `debian-8` due to `2019.2` bug
 (https://github.com/saltstack-formulas/template-formula/commit/e8f0f7e[e8f0f7e])
 
-=== BREAKING CHANGES
+==== BREAKING CHANGES
 
 * *states:* Wholesale state ID changes will break implementations that
 are relying on the previous state IDs for requisite purposes.
@@ -165,28 +163,28 @@ are relying on the previous state IDs for requisite purposes.
 implementations that are depending on `pkg` for `include` or `sls`-based
 requisite purposes.
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.7.5...v0.7.6++[0.7.6] (2019-02-27)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.7.5...v0.7.6[0.7.6] (2019-02-27)
 
-=== Documentation
+==== Documentation
 
 * *yaml:* os*.yaml map files needs at least an empty dict
 (https://github.com/saltstack-formulas/template-formula/commit/dd99750[dd99750])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.7.4...v0.7.5++[0.7.5] (2019-02-27)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.7.4...v0.7.5[0.7.5] (2019-02-27)
 
-=== Bug Fixes
+==== Bug Fixes
 
 * *pillar:* fix `os_family` typo
 (https://github.com/saltstack-formulas/template-formula/commit/3f89c12[3f89c12])
 * *tofs:* update comments in `files_switch` macro for new method
 (https://github.com/saltstack-formulas/template-formula/commit/3fa3640[3fa3640])
 
-=== Code Refactoring
+==== Code Refactoring
 
 * *macros:* use `tplroot` instead of `topdir` to match `tpldata`
 (https://github.com/saltstack-formulas/template-formula/commit/923b459[923b459])
 
-=== Documentation
+==== Documentation
 
 * *tofs:* add more sub-headings to ease document navigation
 (https://github.com/saltstack-formulas/template-formula/commit/2c5dc21[2c5dc21])
@@ -203,37 +201,37 @@ https://github.com/saltstack-formulas/template-formula/issues/44[#44]
 * *tofs:* use `{%-` for all Jinja statements
 (https://github.com/saltstack-formulas/template-formula/commit/4348df8[4348df8])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.7.3...v0.7.4++[0.7.4] (2019-02-27)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.7.3...v0.7.4[0.7.4] (2019-02-27)
 
-=== Continuous Integration
+==== Continuous Integration
 
 * *kitchen:* check for repos updates before trying package installation
 (https://github.com/saltstack-formulas/template-formula/commit/b632383[b632383])
 * *kitchen+travis:* disable `debian-8` due to `2019.2` installation bug
 (https://github.com/saltstack-formulas/template-formula/commit/178c710[178c710])
 
-=== Documentation
+==== Documentation
 
 * *contributing:* separate `BREAKING CHANGE` under its own heading
 (https://github.com/saltstack-formulas/template-formula/commit/ee053d7[ee053d7])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.7.2...v0.7.3++[0.7.3] (2019-02-25)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.7.2...v0.7.3[0.7.3] (2019-02-25)
 
-=== Bug Fixes
+==== Bug Fixes
 
 * *tofs:* use `tpldir` derivative `topdir` for pillar (config) paths
 (https://github.com/saltstack-formulas/template-formula/commit/5e9df00[5e9df00])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.7.1...v0.7.2++[0.7.2] (2019-02-24)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.7.1...v0.7.2[0.7.2] (2019-02-24)
 
-=== Code Refactoring
+==== Code Refactoring
 
 * *tpldir:* use `tpldir` or derivatives to make formula portable
 (https://github.com/saltstack-formulas/template-formula/commit/52d03d8[52d03d8]),
 closes
 https://github.com/saltstack-formulas/template-formula/issues/22[#22]
 
-=== Continuous Integration
+==== Continuous Integration
 
 * *kitchen:* improve comments about `opensuse` problems encountered
 (https://github.com/saltstack-formulas/template-formula/commit/c246939[c246939])
@@ -243,28 +241,28 @@ closes
 https://github.com//travis-ci.com/saltstack-formulas/template-formula/jobs/180068519/issues/L466[/travis-ci.com/saltstack-formulas/template-formula/jobs/180068519#L466]
 https://github.com//github.com/saltstack-formulas/template-formula/pull/42/issues/issuecomment-466446324[/github.com/saltstack-formulas/template-formula/pull/42#issuecomment-466446324]
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.7.0...v0.7.1++[0.7.1] (2019-02-24)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.7.0...v0.7.1[0.7.1] (2019-02-24)
 
-=== Continuous Integration
+==== Continuous Integration
 
 * *kitchen:* use `salt-minion` version of `opensuse` to ensure tests run
 (https://github.com/saltstack-formulas/template-formula/commit/99b073a[99b073a])
 
-=== Documentation
+==== Documentation
 
 * *changelog:* remove erroneous "closes" used by `semantic-release`
 (https://github.com/saltstack-formulas/template-formula/commit/be4571d[be4571d])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.6.0...v0.7.0++[0.7.0] (2019-02-23)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.6.0...v0.7.0[0.7.0] (2019-02-23)
 
-=== Features
+==== Features
 
 * *tofs:* implement backwards-compatible TOFSv2 for configurability
 (https://github.com/saltstack-formulas/template-formula/commit/068a94d[068a94d])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.5.0...v0.6.0++[0.6.0] (2019-02-23)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.5.0...v0.6.0[0.6.0] (2019-02-23)
 
-=== Documentation
+==== Documentation
 
 * *contributing:* add basic introductory text before the TOC
 (https://github.com/saltstack-formulas/template-formula/commit/45ccaf6[45ccaf6])
@@ -273,172 +271,172 @@ https://github.com//github.com/saltstack-formulas/template-formula/pull/42/issue
 * *readme:* convert note into a heading
 (https://github.com/saltstack-formulas/template-formula/commit/5f2d789[5f2d789])
 
-=== Features
+==== Features
 
 * *toc:* use `markdown-toc` directly to update inline
 (https://github.com/saltstack-formulas/template-formula/commit/a5bae1e[a5bae1e])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.4.0...v0.5.0++[0.5.0] (2019-02-23)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.4.0...v0.5.0[0.5.0] (2019-02-23)
 
-=== Features
+==== Features
 
 * *kitchen+travis:* add `opensuse-leap` after resolving issues
 (https://github.com/saltstack-formulas/template-formula/commit/7614a3c[7614a3c])
 * *kitchen+travis:* conduct tests on a wider range of platforms
 (https://github.com/saltstack-formulas/template-formula/commit/1348078[1348078])
 
-=== Tests
+==== Tests
 
 * *inspec:* update `supports` for all platforms added
 (https://github.com/saltstack-formulas/template-formula/commit/42f93b3[42f93b3])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.3.6...v0.4.0++[0.4.0] (2019-02-23)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.3.6...v0.4.0[0.4.0] (2019-02-23)
 
-=== Documentation
+==== Documentation
 
 * *contributing:* centre-align version bump columns in table
 (https://github.com/saltstack-formulas/template-formula/commit/a238cae[a238cae])
 
-=== Features
+==== Features
 
 * *authors:* update automatically alongside `semantic-release`
 (https://github.com/saltstack-formulas/template-formula/commit/8000098[8000098])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.3.5...v0.3.6++[0.3.6] (2019-02-22)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.3.5...v0.3.6[0.3.6] (2019-02-22)
 
-=== Continuous Integration
+==== Continuous Integration
 
 * *travis:* include `commitlint` stage
 (https://github.com/saltstack-formulas/template-formula/commit/6659a69[6659a69])
 * *travis:* remove obsolete check based on `$TRAVIS_TEST_RESULT`
 (https://github.com/saltstack-formulas/template-formula/commit/6df9c95[6df9c95])
 
-=== Documentation
+==== Documentation
 
 * *contributing:* update with sub-headings and `commitlint` details
 (https://github.com/saltstack-formulas/template-formula/commit/ea2c9a4[ea2c9a4])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.3.4...v0.3.5++[0.3.5] (2019-02-21)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.3.4...v0.3.5[0.3.5] (2019-02-21)
 
-=== Code Refactoring
+==== Code Refactoring
 
 * *kitchen:* prefer `kitchen.yml` to `.kitchen.yml`
 (https://github.com/saltstack-formulas/template-formula/commit/3860bf9[3860bf9])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.3.3...v0.3.4++[0.3.4] (2019-02-21)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.3.3...v0.3.4[0.3.4] (2019-02-21)
 
-=== Documentation
+==== Documentation
 
 * *contributing:* add commit message formatting instructions
 (https://github.com/saltstack-formulas/template-formula/commit/fb3d173[fb3d173])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.3.2...v0.3.3++[0.3.3] (2019-02-20)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.3.2...v0.3.3[0.3.3] (2019-02-20)
 
-=== Documentation
+==== Documentation
 
 * *changelog:* add missing entry under `v0.3.2`
 (https://github.com/saltstack-formulas/template-formula/commit/50352b5[50352b5])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.3.1...v0.3.2++[0.3.2] (2019-02-20)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.3.1...v0.3.2[0.3.2] (2019-02-20)
 
-=== Documentation
+==== Documentation
 
 * *README:* remove gitchangelog
 (https://github.com/saltstack-formulas/template-formula/commit/2fc85fc[2fc85fc])
 * *contributing:* create blank template
 (https://github.com/saltstack-formulas/template-formula/commit/3633e8f[3633e8f])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.3.0...v0.3.1++[0.3.1] (2019-02-20)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.3.0...v0.3.1[0.3.1] (2019-02-20)
 
-=== Documentation
+==== Documentation
 
 * *changelog:* merge previous `rst` into new `md` format
 (https://github.com/saltstack-formulas/template-formula/commit/2b4e485[2b4e485])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.2.0...v0.3.0++[0.3.0] (2019-02-20)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.2.0...v0.3.0[0.3.0] (2019-02-20)
 
-=== Features
+==== Features
 
 * *semantic-release:* configure for this formula
 (https://github.com/saltstack-formulas/template-formula/commit/cbcfd75[cbcfd75])
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.1.7...v0.2.0++[0.2.0] (2019-02-17)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.1.7...v0.2.0[0.2.0] (2019-02-17)
 
 * Added a working testing scaffold and travis support. [Javier Bértoli]
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.1.6...v0.1.7++[0.1.7] (2019-02-16)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.1.6...v0.1.7[0.1.7] (2019-02-16)
 
-=== Fix
+==== Fix
 
 * Typo in the installation instructions. [Niels Abspoel]
 
-=== Other
+==== Other
 
 * Update the changelog. [Niels Abspoel]
 * Update README with link to install gitchangelog [Imran Iqbal]
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.1.5...v0.1.6++[0.1.6] (2019-02-16)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.1.5...v0.1.6[0.1.6] (2019-02-16)
 
 * Add changelog generator. [Niels Abspoel]
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.1.4...v0.1.5++[0.1.5] (2019-02-15)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.1.4...v0.1.5[0.1.5] (2019-02-15)
 
 * Prepare v0.1.5 [Imran Iqbal]
 * Fix missing ')' [gmazrael]
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.1.3...v0.1.4++[0.1.4] (2019-02-15)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.1.3...v0.1.4[0.1.4] (2019-02-15)
 
 * Replace obsolete VERSION file and replace with FORMULA file. [Imran
 Iqbal]
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.1.2...v0.1.3++[0.1.3] (2019-02-12)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.1.2...v0.1.3[0.1.3] (2019-02-12)
 
 * Updated changelog and version. [Alexander Weidinger]
 * Map.jinja: use grains.filter_by instead of defaults.merge. [Alexander
 Weidinger]
 +
-____
+__________________________________________________________________________________________________
 because defaults.merge does not work with salt-ssh.
 https://github.com/saltstack/salt/issues/51605
 
 Added osfingermap.yaml.
-____
+__________________________________________________________________________________________________
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.1.1...v0.1.2++[0.1.2] (2019-02-12)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.1.1...v0.1.2[0.1.2] (2019-02-12)
 
 * Improve comments and examples in osfamilymap & osmap [Imran Iqbal]
 * Fix map.jinja and add more OSes. [Imran Iqbal]
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.1.0...v0.1.1++[0.1.1] (2019-02-10)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.1.0...v0.1.1[0.1.1] (2019-02-10)
 
 * Update. [Niels Abspoel]
 * Update formula with map.jinja and style guide references, improve
 README and VERSION. [Niels Abspoel]
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.0.9...v0.1.0++[0.1.0] (2019-02-10)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.0.9...v0.1.0[0.1.0] (2019-02-10)
 
 * Examples must be consistent. [Daniel Dehennin]
 +
-____
+________________________________________
 The “template” is kept during rendering.
-____
+________________________________________
 ** TOFS_pattern.md: add “template” to rendered state.
 ** template/macros.jinja: ditoo.
 * Remove double slash in generated salt URL. [Daniel Dehennin]
 +
-____
+____________________________________________________________________________________________________________________
 When the files are “full path” with leading slash “/”, the generated URL
 contain a double slash because of the join.
-____
+____________________________________________________________________________________________________________________
 ** template/macros.jinja: remove leading slash before joining parts.
 ** TOFS_pattern.md: mirror changes of “macros.jinja”.
 * Add an example for “ntp” of the use of “files_switch” [Daniel
 Dehennin]
 * Accept pillar separator in “files_switch” prefix. [Daniel Dehennin]
 +
-____
+___________________________________
 The prefix was used for 2 purposes:
-____
+___________________________________
 ** define the pillar prefix where to lookup “:files_switch”. It supports
 the colon “:” separator to lookup in pillar subtree like “foo:bar”
 ** define the path prefix where to look for “files/”, It did not support
@@ -454,10 +452,10 @@ directory, with the “foo:bar” prefix:
 “/” to lookup files.
 * Make TOFS pattern example usable. [Daniel Dehennin]
 +
-____
+___________________________________________________________________________________________
 The example could not be used as-is. This commit improve conformity to
 formula conventions.
-____
+___________________________________________________________________________________________
 ** TOFS_pattern.md: add missing commas “,” in “map.jinja” and extra one
 to ease the addition of new entries. Import “map.jinja” in “init.sls”
 and “conf.sls”. Declare descriptive state IDs. Use the “module.function”
@@ -469,61 +467,59 @@ Separate titles from first paragraph.
 * Switch template.config to TOFS pattern. [Daniel Dehennin]
 * Import TOFS pattern from Zabbix formula. [Daniel Dehennin]
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.0.8...v0.0.9++[0.0.9] (2019-02-10)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.0.8...v0.0.9[0.0.9] (2019-02-10)
 
 * Add VERSION file. [Karim Hamza]
 * Add note about formula versioning. [Karim Hamza]
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.0.7...v0.0.8++[0.0.8] (2019-02-10)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.0.7...v0.0.8[0.0.8] (2019-02-10)
 
 * Align with SaltStack official formulas doc page. [Denys Havrysh]
 * Use https in the link to SaltStack documentation. [Denys Havrysh]
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.0.6...v0.0.7++[0.0.7] (2019-02-10)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.0.6...v0.0.7[0.0.7] (2019-02-10)
 
 * Map.ninja: fix typos and leftover comments. [Marco Molteni]
 * Remove whitespace in map.jinja comment. [Andrew Gabbitas]
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.0.5...v0.0.6++[0.0.6] (2019-02-10)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.0.5...v0.0.6[0.0.6] (2019-02-10)
 
 * Improve style and jinja too match salt-formula. [Niels Abspoel]
 * Propose new-ish formula style - defaults live in defaults.yml - map
 jinja overrides by grain + merges pillar:lookup - split all contextually
 similar states in their own files. [puneet kandhari]
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.0.4...v0.0.5++[0.0.5] (2019-02-10)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.0.4...v0.0.5[0.0.5] (2019-02-10)
 
 * Change states to use short-dec style. [Seth House]
 * Update CHANGELOG.rst. [Nitin Madhok]
 * Update README.rst. [Nitin Madhok]
 +
-____
+_______________
 Fix broken link
-____
+_______________
 * Fixing pillar to match the map file. [Forrest]
 +
-____
+_________________________________
 Map file and pillar didn't match.
-____
+_________________________________
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.0.3...v0.0.4++[0.0.4] (2019-02-10)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.0.3...v0.0.4[0.0.4] (2019-02-10)
 
 * Add change log. [Antti Jokipii]
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.0.2...v0.0.3++[0.0.3] (2019-02-10)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.0.2...v0.0.3[0.0.3] (2019-02-10)
 
 * Updated the license and readme to match our standards. [Forrest
 Alvarez]
 * Use map.jinja content in init.sls. [Eugene Vereschagin]
 * Add map.jinja. [Eugene Vereschagin]
 
-== link:++https://github.com/saltstack-formulas/template-formula/compare/v0.0.1...v0.0.2++[0.0.2] (2019-02-10)
+=== https://github.com/saltstack-formulas/template-formula/compare/v0.0.1...v0.0.2[0.0.2] (2019-02-10)
 
 * Add link to Salt Formula documentation. [Eugene Vereschagin]
 * Change extension from .md to .rst. [Eugene Vereschagin]
 
-== link:++https://github.com/saltstack-formulas/template-formula/releases/tag/v0.0.1++[0.0.1] (2019-02-10)
+=== https://github.com/saltstack-formulas/template-formula/releases/tag/v0.0.1[0.0.1] (2019-02-10)
 
 * Initial commit. [Lukas Erlacher]
-
-:sectnums:
