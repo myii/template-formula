@@ -1,2 +1,3 @@
-* Guides
-** xref:guide_how-to_use-this-template.adoc[How to: Use this template]
+.Guides
+
+* xref:guide_how-to_use-this-template.adoc[How to: Use this template]
