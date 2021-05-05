@@ -51,13 +51,26 @@ variables:
 # `lint` stage: `commitlint`, `pre-commit`, `rubocop` (latest, failure allowed)
 #               & `coala` (dev, failure allowed)
 ###############################################################################
+pre-commit:
+  stage: *stage_lint
+  image: *image_precommit
+  # https://pre-commit.com/#gitlab-ci-example
+  variables:
+    PRE_COMMIT_HOME: '${CI_PROJECT_DIR}/.cache/pre-commit'
+  cache:
+    key: '${CI_JOB_NAME}'
+    paths:
+      - '${PRE_COMMIT_HOME}'
+  script:
+    - 'pre-commit run --all-files --color always --verbose'
+
 coala:
   # allow_failure: true
   stage: *stage_lint
   image: *image_coala
   script:
     - 'coala --ci --files docs/README.rst --bears reSTLintBear
-             --min-severity NORMAL --no-autoapply-warn'
+             --min-severity INFO --no-autoapply-warn'
 
 ###############################################################################
 # Define `test` template
