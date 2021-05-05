@@ -1,3 +1,2 @@
-.Tutorials
-
-* xref:tutorial_.adoc[...]
+* Tutorials
+** xref:tutorial_.adoc[...]

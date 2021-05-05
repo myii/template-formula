@@ -1,3 +1,2 @@
-.Explanations
-
-* xref:explanation_.adoc[...]
+* Explanations
+** xref:explanation_.adoc[...]
