@@ -215,11 +215,11 @@ Runs the ``inspec`` tests on the actual instance.
 Removes the docker instance.
 
 ``bin/kitchen test``
-^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^
 
 Runs all of the stages above in one go: i.e. ``destroy`` + ``converge`` + ``verify`` + ``destroy``.
 
 ``bin/kitchen login``
-^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^
 
 Gives you SSH access to the instance for manual testing.
