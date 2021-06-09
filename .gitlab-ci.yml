@@ -49,56 +49,58 @@ variables:
 ###############################################################################
 # `lint` stage: `commitlint`, `pre-commit` & `rubocop` (latest, failure allowed)
 ###############################################################################
-commitlint:
-  stage: *stage_lint
-  image: *image_commitlint
-  script:
-    # Add `upstream` remote to get access to `upstream/master`
-    - 'git remote add upstream
-       https://gitlab.com/saltstack-formulas/template-formula.git'
-    - 'git fetch --all'
-    # Set default commit hashes for `--from` and `--to`
-    - 'export COMMITLINT_FROM="$(git merge-base upstream/master HEAD)"'
-    - 'export COMMITLINT_TO="${CI_COMMIT_SHA}"'
-    # `coqbot` adds a merge commit to test PRs on top of the latest commit in
-    # the repo; amend this merge commit message to avoid failure
-    - |
-      if [ "${GITLAB_USER_LOGIN}" = "coqbot" ] \
-      && [ "${CI_COMMIT_BRANCH}" != "master" ]; then
-        git commit --amend -m \
-          'chore: reword coqbot merge commit message for commitlint'
-        export COMMITLINT_TO=HEAD
-      fi
-    # Run `commitlint`
-    - 'commitlint --from "${COMMITLINT_FROM}"
-                  --to   "${COMMITLINT_TO}"
-                  --verbose'
-
-pre-commit:
-  stage: *stage_lint
-  image: *image_precommit
-  # https://pre-commit.com/#gitlab-ci-example
-  variables:
-    PRE_COMMIT_HOME: '${CI_PROJECT_DIR}/.cache/pre-commit'
-  cache:
-    key: '${CI_JOB_NAME}'
-    paths:
-      - '${PRE_COMMIT_HOME}'
-  script:
-    - 'pre-commit run --all-files --color always --verbose'
-
-# Use a separate job for `rubocop` other than the one potentially run by `pre-commit`
-# - The `pre-commit` check will only be available for formulas that pass the default
-#   `rubocop` check -- and must continue to do so
-# - This job is allowed to fail, so can be used for all formulas
-# - Furthermore, this job uses all of the latest `rubocop` features & cops,
-#   which will help when upgrading the `rubocop` linter used in `pre-commit`
-rubocop:
-  allow_failure: true
-  stage: *stage_lint
-  image: *image_rubocop
-  script:
-    - 'rubocop -d -P -S --enable-pending-cops'
+# commitlint:
+#   allow_failure: true
+#   stage: *stage_lint
+#   image: *image_commitlint
+#   script:
+#     # Add `upstream` remote to get access to `upstream/master`
+#     - 'git remote add upstream
+#        https://gitlab.com/saltstack-formulas/template-formula.git'
+#     - 'git fetch --all'
+#     # Set default commit hashes for `--from` and `--to`
+#     - 'export COMMITLINT_FROM="$(git merge-base upstream/master HEAD)"'
+#     - 'export COMMITLINT_TO="${CI_COMMIT_SHA}"'
+#     # `coqbot` adds a merge commit to test PRs on top of the latest commit in
+#     # the repo; amend this merge commit message to avoid failure
+#     - |
+#       if [ "${GITLAB_USER_LOGIN}" = "coqbot" ] \
+#       && [ "${CI_COMMIT_BRANCH}" != "master" ]; then
+#         git commit --amend -m \
+#           'chore: reword coqbot merge commit message for commitlint'
+#         export COMMITLINT_TO=HEAD
+#       fi
+#     # Run `commitlint`
+#     - 'commitlint --from "${COMMITLINT_FROM}"
+#                   --to   "${COMMITLINT_TO}"
+#                   --verbose'
+#
+# pre-commit:
+#   allow_failure: true
+#   stage: *stage_lint
+#   image: *image_precommit
+#   # https://pre-commit.com/#gitlab-ci-example
+#   variables:
+#     PRE_COMMIT_HOME: '${CI_PROJECT_DIR}/.cache/pre-commit'
+#   cache:
+#     key: '${CI_JOB_NAME}'
+#     paths:
+#       - '${PRE_COMMIT_HOME}'
+#   script:
+#     - 'pre-commit run --all-files --color always --verbose'
+#
+# # Use a separate job for `rubocop` other than the one potentially run by `pre-commit`
+# # - The `pre-commit` check will only be available for formulas that pass the default
+# #   `rubocop` check -- and must continue to do so
+# # - This job is allowed to fail, so can be used for all formulas
+# # - Furthermore, this job uses all of the latest `rubocop` features & cops,
+# #   which will help when upgrading the `rubocop` linter used in `pre-commit`
+# rubocop:
+#   allow_failure: true
+#   stage: *stage_lint
+#   image: *image_rubocop
+#   script:
+#     - 'rubocop -d -P -S --enable-pending-cops'
 
 ###############################################################################
 # Define `test` template
@@ -153,114 +155,30 @@ rubocop:
 ## Define the rest of the matrix based on Kitchen testing
 # Make sure the instances listed below match up with
 # the `platforms` defined in `kitchen.yml`
-# <REMOVEME
-# NOTE: Please try to select up to six instances that add some meaningful
-#       testing of the formula's behaviour. If possible, try to refrain from
-#       the classical "chosing all the instances because I want to test on
-#       another/all distro/s" trap: it will just add time to the testing (see
-#       the discussion on #121).  As an example, the set chosen below covers
-#       the most used distros families, systemd and non-systemd and the latest
-#       three supported Saltstack versions with python2 and 3.
-#       As for `kitchen.yml`, that should still contain all of the platforms,
-#       to allow for comprehensive local testing
-#       Ref: https://github.com/saltstack-formulas/template-formula/issues/118
-#       Ref: https://github.com/saltstack-formulas/template-formula/issues/121
-test-formula-conversion: {extends: '.test_conversion'}
-# REMOVEME>
-# default-debian-10-tiamat-py3: {extends: '.test_instance'}
-# default-debian-9-tiamat-py3: {extends: '.test_instance'}
-# default-ubuntu-2004-tiamat-py3: {extends: '.test_instance'}
-# default-ubuntu-1804-tiamat-py3: {extends: '.test_instance'}
-# default-ubuntu-1604-tiamat-py3: {extends: '.test_instance'}
-# default-centos-8-tiamat-py3: {extends: '.test_instance'}
-# default-centos-7-tiamat-py3: {extends: '.test_instance'}
-# default-amazonlinux-2-tiamat-py3: {extends: '.test_instance'}
-# default-oraclelinux-8-tiamat-py3: {extends: '.test_instance'}
-# default-oraclelinux-7-tiamat-py3: {extends: '.test_instance'}
-default-debian-10-master-py3: {extends: '.test_instance'}
-default-debian-9-master-py3: {extends: '.test_instance'}
-default-ubuntu-2004-master-py3: {extends: '.test_instance'}
-default-ubuntu-1804-master-py3: {extends: '.test_instance'}
-default-ubuntu-1604-master-py3: {extends: '.test_instance'}
-default-centos-8-master-py3: {extends: '.test_instance'}
-default-centos-7-master-py3: {extends: '.test_instance'}
-default-fedora-34-master-py3: {extends: '.test_instance'}
-default-fedora-33-master-py3: {extends: '.test_instance'}
-default-fedora-32-master-py3: {extends: '.test_instance'}
-default-opensuse-leap-152-master-py3: {extends: '.test_instance'}
-default-opensuse-tmbl-latest-master-py3: {extends: '.test_instance'}
-default-amazonlinux-2-master-py3: {extends: '.test_instance'}
-default-oraclelinux-8-master-py3: {extends: '.test_instance'}
-default-oraclelinux-7-master-py3: {extends: '.test_instance'}
-default-arch-base-latest-master-py3: {extends: '.test_instance'}
-gentoo-gentoo-stage3-latest-master-py3: {extends: '.test_instance'}
-gentoo-gentoo-stage3-systemd-master-py3: {extends: '.test_instance'}
-# default-debian-10-3003-0-py3: {extends: '.test_instance'}
-# default-debian-9-3003-0-py3: {extends: '.test_instance'}
-# default-ubuntu-2004-3003-0-py3: {extends: '.test_instance'}
-# default-ubuntu-1804-3003-0-py3: {extends: '.test_instance'}
-# default-centos-8-3003-0-py3: {extends: '.test_instance'}
-# default-centos-7-3003-0-py3: {extends: '.test_instance'}
-# default-fedora-34-3003-0-py3: {extends: '.test_instance'}
-# default-fedora-33-3003-0-py3: {extends: '.test_instance'}
-# default-fedora-32-3003-0-py3: {extends: '.test_instance'}
-# default-amazonlinux-2-3003-0-py3: {extends: '.test_instance'}
-# default-oraclelinux-8-3003-0-py3: {extends: '.test_instance'}
-# default-oraclelinux-7-3003-0-py3: {extends: '.test_instance'}
-# default-arch-base-latest-3003-0-py3: {extends: '.test_instance'}
-# gentoo-gentoo-stage3-latest-3003-0-py3: {extends: '.test_instance'}
-# gentoo-gentoo-stage3-systemd-3003-0-py3: {extends: '.test_instance'}
-# default-debian-10-3002-6-py3: {extends: '.test_instance'}
-# default-debian-9-3002-6-py3: {extends: '.test_instance'}
-# default-ubuntu-2004-3002-6-py3: {extends: '.test_instance'}
-# default-ubuntu-1804-3002-6-py3: {extends: '.test_instance'}
-# default-ubuntu-1604-3002-6-py3: {extends: '.test_instance'}
-# default-centos-8-3002-6-py3: {extends: '.test_instance'}
-# default-centos-7-3002-6-py3: {extends: '.test_instance'}
-# default-fedora-34-3002-6-py3: {extends: '.test_instance'}
-# default-fedora-33-3002-6-py3: {extends: '.test_instance'}
-# default-fedora-32-3002-6-py3: {extends: '.test_instance'}
-# default-amazonlinux-2-3002-6-py3: {extends: '.test_instance'}
-# default-oraclelinux-8-3002-6-py3: {extends: '.test_instance'}
-# default-oraclelinux-7-3002-6-py3: {extends: '.test_instance'}
-# default-arch-base-latest-3002-6-py3: {extends: '.test_instance'}
-# gentoo-gentoo-stage3-latest-3002-5-py3: {extends: '.test_instance'}
-# gentoo-gentoo-stage3-systemd-3002-5-py3: {extends: '.test_instance'}
-# default-opensuse-leap-152-3002-2-py3: {extends: '.test_instance'}
-# default-opensuse-tmbl-latest-3002-2-py3: {extends: '.test_instance'}
-# default-debian-10-3001-7-py3: {extends: '.test_instance'}
-# default-debian-9-3001-7-py3: {extends: '.test_instance'}
-# default-ubuntu-2004-3001-7-py3: {extends: '.test_instance'}
-# default-ubuntu-1804-3001-7-py3: {extends: '.test_instance'}
-# default-ubuntu-1604-3001-7-py3: {extends: '.test_instance'}
-# default-centos-8-3001-7-py3: {extends: '.test_instance'}
-# default-centos-7-3001-7-py3: {extends: '.test_instance'}
-# default-fedora-34-3001-7-py3: {extends: '.test_instance'}
-# default-fedora-33-3001-7-py3: {extends: '.test_instance'}
-# default-fedora-32-3001-7-py3: {extends: '.test_instance'}
-# default-opensuse-leap-152-3001-7-py3: {extends: '.test_instance'}
-# default-opensuse-tmbl-latest-3001-7-py3: {extends: '.test_instance'}
-# default-amazonlinux-2-3001-7-py3: {extends: '.test_instance'}
-# default-oraclelinux-8-3001-7-py3: {extends: '.test_instance'}
-# default-oraclelinux-7-3001-7-py3: {extends: '.test_instance'}
-# default-arch-base-latest-3001-7-py3: {extends: '.test_instance'}
-# gentoo-gentoo-stage3-latest-3001-6-py3: {extends: '.test_instance'}
-# gentoo-gentoo-stage3-systemd-3001-6-py3: {extends: '.test_instance'}
-# default-debian-10-3000-9-py3: {extends: '.test_instance'}
-# default-debian-9-3000-9-py3: {extends: '.test_instance'}
-# default-ubuntu-1804-3000-9-py3: {extends: '.test_instance'}
-# default-ubuntu-1604-3000-9-py3: {extends: '.test_instance'}
-# default-centos-8-3000-9-py3: {extends: '.test_instance'}
-# default-centos-7-3000-9-py3: {extends: '.test_instance'}
-# default-opensuse-leap-152-3000-9-py3: {extends: '.test_instance'}
-# default-amazonlinux-2-3000-9-py3: {extends: '.test_instance'}
-# default-oraclelinux-8-3000-9-py3: {extends: '.test_instance'}
-# default-oraclelinux-7-3000-9-py3: {extends: '.test_instance'}
-# default-ubuntu-1804-3000-9-py2: {extends: '.test_instance'}
-# default-ubuntu-1604-3000-9-py2: {extends: '.test_instance'}
-# default-arch-base-latest-3000-9-py2: {extends: '.test_instance'}
-# gentoo-gentoo-stage3-latest-3000-8-py3: {extends: '.test_instance'}
-# gentoo-gentoo-stage3-systemd-3000-8-py3: {extends: '.test_instance'}
+# # <REMOVEME
+# # NOTE: Please try to select up to six instances that add some meaningful
+# #       testing of the formula's behaviour. If possible, try to refrain from
+# #       the classical "chosing all the instances because I want to test on
+# #       another/all distro/s" trap: it will just add time to the testing (see
+# #       the discussion on #121).  As an example, the set chosen below covers
+# #       the most used distros families, systemd and non-systemd and the latest
+# #       three supported Saltstack versions with python2 and 3.
+# #       As for `kitchen.yml`, that should still contain all of the platforms,
+# #       to allow for comprehensive local testing
+# #       Ref: https://github.com/saltstack-formulas/template-formula/issues/118
+# #       Ref: https://github.com/saltstack-formulas/template-formula/issues/121
+# test-formula-conversion: {extends: '.test_conversion'}
+# # REMOVEME>
+default-debian-10-tiamat-py3: {extends: '.test_instance'}
+default-debian-9-tiamat-py3: {extends: '.test_instance'}
+default-ubuntu-2004-tiamat-py3: {extends: '.test_instance'}
+default-ubuntu-1804-tiamat-py3: {extends: '.test_instance'}
+default-ubuntu-1604-tiamat-py3: {extends: '.test_instance'}
+default-centos-8-tiamat-py3: {extends: '.test_instance'}
+default-centos-7-tiamat-py3: {extends: '.test_instance'}
+default-amazonlinux-2-tiamat-py3: {extends: '.test_instance'}
+default-oraclelinux-8-tiamat-py3: {extends: '.test_instance'}
+default-oraclelinux-7-tiamat-py3: {extends: '.test_instance'}
 
 ###############################################################################
 # `release` stage: `semantic-release`
